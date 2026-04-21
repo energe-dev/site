@@ -41,7 +41,7 @@ nav{
 .hero{position:relative;min-height:94vh;display:flex;align-items:center;overflow:hidden}
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url('images/hero-bg.jpg');
+  background-image:url('images/hero-uca.jpg');
   background-size:cover;background-position:center;
 }
 .hero-overlay{
