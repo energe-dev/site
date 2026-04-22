@@ -3,10 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cotizador Solar – Energe</title>
+  <title>Cotizador Solar Gratuito para Empresas e Industrias | Energe Argentina</title>
+  <meta name="description" content="Obtené tu diagnóstico energético gratuito en 2 minutos. Calculá el ahorro con energía solar para tu industria o empresa. Ingenieros especializados te responden.">
+  <meta name="keywords" content="cotizador solar Argentina, presupuesto paneles solares empresa, diagnóstico energético gratuito, solar industrial cotización Argentina">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://energe.com.ar/cotizador-solar.html">
+  <link rel="alternate" hreflang="es" href="https://energe.com.ar/cotizador-solar.html">
+  <link rel="alternate" hreflang="en" href="https://energe.com.ar/en/cotizador-solar.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cotizador Solar Gratuito para Empresas | Energe Argentina">
+  <meta property="og:description" content="Obtené tu diagnóstico energético gratuito. Calculá el ahorro con energía solar para tu industria en Argentina.">
+  <meta property="og:image" content="https://energe.com.ar/images/obras/parque-santa-rosa.jpg">
+  <meta property="og:url" content="https://energe.com.ar/cotizador-solar.html">
+  <meta property="og:site_name" content="Energe">
+  <meta property="og:locale" content="es_AR">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cotizador Solar Gratuito | Energe Argentina">
+  <meta name="twitter:description" content="Diagnóstico energético gratuito para industrias y empresas en Argentina.">
+  <meta name="twitter:image" content="https://energe.com.ar/images/obras/parque-santa-rosa.jpg">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cotizador Solar Gratuito — Energe",
+    "url": "https://energe.com.ar/cotizador-solar.html",
+    "description": "Herramienta de cotización gratuita para sistemas fotovoltaicos industriales en Argentina.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Energe",
+      "url": "https://energe.com.ar",
+      "logo": {"@type": "ImageObject", "url": "https://energe.com.ar/images/logos/logo-energe.png"}
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -14,13 +51,17 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><img src="images/logos/logo-energe.png" alt="Energe" /></div>
-  <ul class="nav-links">
-    <li><a href="index.html">Soluciones</a></li>
+  <div class="nav-logo"><a href="index.html"><img src="images/logos/logo-energe.png" alt="Energe" /></a></div>
+  <button class="nav-hamburger" id="navToggle" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#soluciones">Soluciones</a></li>
     <li><a href="index.html#obras">Obras realizadas</a></li>
-    <li><a href="index.html">Tecnología</a></li>
-    <li><a href="index.html">Empresa</a></li>
-    <li><a href="cotizador-solar.html" class="nav-cta">Cotizá tu proyecto</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="cotizador-solar.html" class="nav-cta active">Cotizá tu proyecto</a></li>
+    <li class="nav-lang-li"><a href="cotizador-solar.html" class="lang-btn active">ES</a><span class="lang-sep">|</span><a href="en/cotizador-solar.html" class="lang-btn">EN</a></li>
   </ul>
 </nav>
 
@@ -237,8 +278,8 @@
     </div>
   </div>
   <div class="ft-bottom">
-    <span><a href="#">Política de privacidad</a></span>
-    <span><a href="#">Legales</a></span>
+    <span><a href="privacidad.html">Política de privacidad</a></span>
+    <span><a href="legales.html">Legales</a></span>
   </div>
 </footer>
 
@@ -346,6 +387,14 @@ function resetForm() {
   goToStep(1);
   return false;
 }
+
+// Hamburger nav
+(function(){
+  var btn=document.getElementById('navToggle'), nav=document.getElementById('navLinks');
+  if(!btn) return;
+  btn.addEventListener('click',function(){ var open=nav.classList.toggle('nav-open'); btn.classList.toggle('is-open',open); btn.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú'); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ nav.classList.remove('nav-open'); btn.classList.remove('is-open'); }); });
+})();
 </script>
 </body>
 </html>
