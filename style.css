@@ -546,13 +546,13 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
   .nav-links a::after{display:none}
   .nav-cta{border-radius:3px;padding:13px 20px!important;text-align:center;width:100%;display:block!important}
 
-  /* HERO */
-  .hero{min-height:auto}
-  .hero-content{padding:80px 20px 280px;max-width:100%}
+  /* HERO — column layout so float never overlaps buttons */
+  .hero{min-height:auto;flex-direction:column;align-items:stretch}
+  .hero-content{padding:80px 20px 28px;max-width:100%}
   .hero-vline{left:20px}
   .hero-title{font-size:clamp(32px,9vw,52px)}
   .hero-sub{font-size:13px;margin:20px 0 32px}
-  .hero-float{width:calc(100% - 40px);height:160px;right:20px;bottom:90px}
+  .hero-float{position:relative;bottom:auto;right:auto;left:0;width:calc(100% - 40px);height:160px;margin:0 20px 90px}
   .hero-actions{flex-direction:column;align-items:flex-start;gap:12px}
   .btn-p,.btn-o{font-size:11px;padding:13px 22px}
   .stats-bar{grid-template-columns:repeat(3,1fr)}
