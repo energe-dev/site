@@ -82,13 +82,17 @@ nav{
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
 /* ═══ TRUST BAND — CON LOGOS ═══ */
-.trust-band{background:var(--off-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 64px;overflow:hidden}
+.trust-band{background:var(--off-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 64px;overflow:visible}
 .trust-label{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);text-align:center;margin-bottom:22px}
-.trust-logos-grid{display:flex;align-items:center;justify-content:center;gap:52px;flex-wrap:wrap}
-.trust-logo{display:flex;align-items:center;justify-content:center;height:44px;opacity:.55;filter:grayscale(1);transition:all .25s;cursor:default}
+.trust-slider-wrap{display:flex;align-items:center;gap:14px}
+.trust-btn{flex:0 0 auto;background:#fff;border:1.5px solid var(--border);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:18px;line-height:1;color:var(--text-muted);cursor:pointer;transition:all .2s;padding:0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.trust-btn:hover:not(:disabled){border-color:var(--orange);color:var(--orange);background:#fff}
+.trust-btn:disabled{opacity:.25;cursor:default}
+.trust-viewport{flex:1;overflow:hidden}
+.trust-track{display:flex;align-items:center;gap:0;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform}
+.trust-logo{flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:64px;opacity:.5;filter:grayscale(1);transition:all .25s;cursor:default;padding:0 14px}
 .trust-logo:hover{opacity:1;filter:grayscale(0)}
-.trust-logo img{max-height:40px;max-width:140px;object-fit:contain;display:block}
-/* logos con fondo negro → invertir para verse en fondo claro */
+.trust-logo img{max-height:56px;max-width:140px;width:auto;object-fit:contain;display:block}
 .trust-logo.invert img{filter:invert(1)}
 .trust-logo.invert:hover img{filter:invert(1) sepia(1) saturate(3) hue-rotate(355deg)}
 
@@ -552,8 +556,9 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
 
   /* TRUST BAND */
   .trust-band{padding:22px 20px}
-  .trust-logos-grid{gap:28px}
-  .trust-logo img{max-height:32px;max-width:100px}
+  .trust-btn{width:28px;height:28px;font-size:15px}
+  .trust-logo{height:52px;padding:0 10px}
+  .trust-logo img{max-height:44px;max-width:110px}
 
   /* VALUE */
   .value-section{padding:56px 20px}
@@ -683,8 +688,8 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
   .article-cta-box{flex-direction:column;align-items:flex-start;gap:16px}
   .article-cta-btn{width:100%;text-align:center}
 
-  /* Trust band gap más compacto */
-  .trust-logos-grid{gap:24px}
+  /* Trust band compact en tablet */
+  .trust-logo{padding:0 8px}
 
   /* Blog preview section */
   .blog-preview-section{padding:56px 20px}

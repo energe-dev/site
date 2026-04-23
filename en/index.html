@@ -106,14 +106,35 @@
 
 <div class="trust-band">
   <div class="trust-label">Trusted by leading companies</div>
-  <div class="trust-logos-grid">
-    <div class="trust-logo invert"><img src="../images/logos/logo-clinica-de-cuyo.png" alt="Clínica de Cuyo" /></div>
-    <div class="trust-logo invert"><img src="../images/logos/logo-mendoza-norte.png" alt="Mendoza Norte" /></div>
-    <div class="trust-logo invert"><img src="../images/logos/logo-aperam.png" alt="Aperam" /></div>
-    <div class="trust-logo invert"><img src="../images/logos/logo-cofarmen.png" alt="Cofarmen" /></div>
-    <div class="trust-logo"><img src="../images/logos/logo-alpamanta.png" alt="Alpamanta Estate Wines" /></div>
-    <div class="trust-logo"><img src="../images/logos/logo-uca.png" alt="UCA" /></div>
-    <div class="trust-logo"><img src="../images/logos/logo-trivento.png" alt="Bodega Trivento" /></div>
+  <div class="trust-slider-wrap">
+    <button class="trust-btn" id="trustPrev" aria-label="Previous">&#8249;</button>
+    <div class="trust-viewport" id="trustViewport">
+      <div class="trust-track" id="trustTrack">
+        <div class="trust-logo invert"><img src="../images/logos/logo-clinica-de-cuyo.png" alt="Clínica de Cuyo" /></div>
+        <div class="trust-logo invert"><img src="../images/logos/logo-mendoza-norte.png" alt="Mendoza Norte" /></div>
+        <div class="trust-logo invert"><img src="../images/logos/logo-aperam.png" alt="Aperam" /></div>
+        <div class="trust-logo invert"><img src="../images/logos/logo-cofarmen.png" alt="Cofarmen" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-alpamanta.png" alt="Alpamanta" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-uca.png" alt="UCA" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-trivento.png" alt="Bodega Trivento" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-chandon.png" alt="Chandon" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-danone.png" alt="Danone" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-pulenta.png" alt="Pulenta Estate" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-vigil.png" alt="Vigil" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-vina-las-perdices.png" alt="Viña Las Perdices" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-yacopini.png" alt="Yacopini" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-capri.png" alt="Capri" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-bautem.png" alt="Bautem" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-rumara.png" alt="Rumará" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-grupo-cem.png" alt="Grupo CEM" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-grupo-latina.png" alt="Grupo Latina" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-legislatura.png" alt="Mendoza Legislature" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-maderera-lobos.png" alt="Maderera Lobos" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-eseica.png" alt="Eseica" /></div>
+        <div class="trust-logo"><img src="../images/logos/logo-transporte-rodriguez.png" alt="Transporte Rodríguez" /></div>
+      </div>
+    </div>
+    <button class="trust-btn" id="trustNext" aria-label="Next">&#8250;</button>
   </div>
 </div>
 
@@ -578,6 +599,47 @@
     <span><a href="legal.html">Legal</a></span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var VISIBLE = 8;
+  var track   = document.getElementById('trustTrack');
+  var vp      = document.getElementById('trustViewport');
+  var prev    = document.getElementById('trustPrev');
+  var next    = document.getElementById('trustNext');
+  if(!track) return;
+  var items   = track.children;
+  var current = 0;
+
+  function itemW(){ return vp.clientWidth / VISIBLE; }
+
+  function resize(){
+    var w = itemW();
+    for(var i=0;i<items.length;i++) items[i].style.width = w + 'px';
+  }
+
+  function update(){
+    var max = items.length - VISIBLE;
+    if(current < 0) current = 0;
+    if(current > max) current = max;
+    track.style.transform = 'translateX(-' + (current * itemW()) + 'px)';
+    prev.disabled = current === 0;
+    next.disabled = current >= max;
+  }
+
+  prev.addEventListener('click', function(){ current--; update(); });
+  next.addEventListener('click', function(){ current++; update(); });
+
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){ resize(); update(); }, 80);
+  });
+
+  resize();
+  update();
+})();
+</script>
 
 <script>
 document.getElementById('contactForm').addEventListener('submit', function(e) {
