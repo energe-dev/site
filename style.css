@@ -203,6 +203,8 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
 .ft-nav-list li a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.85);text-decoration:none;font-size:13px;transition:color .2s}
 .ft-nav-list li a::before{content:"›";font-size:16px;color:var(--orange);line-height:1}
 .ft-nav-list li a:hover{color:#fff}
+.ft-social-list li a{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.85);text-decoration:none;transition:color .2s}
+.ft-social-list li a:hover{color:var(--orange-light)}
 .ft-bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 0;display:flex;justify-content:center;gap:40px}
 .ft-bottom a{color:rgba(255,255,255,.6);text-decoration:none;font-size:11px;font-weight:500;letter-spacing:.5px;transition:color .2s}
 .ft-bottom a:hover{color:#fff}
@@ -536,7 +538,7 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
 
   /* HERO */
   .hero{min-height:auto}
-  .hero-content{padding:80px 20px 220px;max-width:100%}
+  .hero-content{padding:80px 20px 280px;max-width:100%}
   .hero-vline{left:20px}
   .hero-title{font-size:clamp(32px,9vw,52px)}
   .hero-sub{font-size:13px;margin:20px 0 32px}
