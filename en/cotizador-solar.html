@@ -220,7 +220,7 @@
         <p class="cot-disclaimer">By submitting, an Energe engineer will contact you within 24 business hours with your personalised energy diagnostic.</p>
         <div class="cot-nav">
           <button class="cot-btn-back" onclick="prevStep(4)">← Back</button>
-          <button class="cot-btn-submit" onclick="submitForm()">⚡ Submit diagnostic request</button>
+          <button class="cot-btn-submit" id="submitBtn" onclick="submitForm()">⚡ Submit diagnostic request</button>
         </div>
       </div>
 
@@ -372,20 +372,27 @@ function buildSummary() {
   ).join('');
 }
 
+var GAS_URL_COT = 'https://script.google.com/macros/s/AKfycbyMz1NoojZn_fa7GBp_RZ-hwqm-g-5FlW2a6k28pZ22R3m5rpK0m5xPdh5kOhfp5tES4g/exec';
 function submitForm() {
-  const body = `New solar diagnostic request from energe.com.ar/en\n\n` +
-    `Installation type: ${formData.tipo}\n` +
-    `Monthly consumption: ${formData.consumo}\n` +
-    `Province: ${formData.provincia}\n` +
-    `Name: ${formData.nombre}\n` +
-    `Company: ${formData.empresa}\n` +
-    `Email: ${formData.email}\n` +
-    `Phone: ${formData.telefono}\n` +
-    (formData.comentario ? `Comments: ${formData.comentario}\n` : '');
-  const subject = encodeURIComponent(`Solar diagnostic (EN) – ${formData.empresa} (${formData.tipo})`);
-  const bodyEnc = encodeURIComponent(body);
-  window.location.href = `mailto:iniciativas@energesa.odoo.com?subject=${subject}&body=${bodyEnc}`;
-  goToStep(5);
+  var btn = document.getElementById('submitBtn');
+  if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
+  var params = new URLSearchParams({
+    nombre:    formData.nombre,
+    email:     formData.email,
+    telefono:  formData.telefono,
+    provincia: formData.provincia,
+    empresa:   formData.empresa,
+    consumo:   formData.consumo,
+    tipo:      formData.tipo,
+    mensaje:   formData.comentario || '',
+    origen:    'Solar Quoter (EN)'
+  });
+  fetch(GAS_URL_COT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:params.toString()})
+    .then(function(){ goToStep(5); })
+    .catch(function(){
+      if(btn){ btn.disabled=false; btn.textContent='⚡ Submit diagnostic request'; }
+      alert('Could not send. Please try again or email contacto@energe.com.ar');
+    });
 }
 
 function resetForm() {

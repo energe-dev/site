@@ -220,7 +220,7 @@
         <p class="cot-disclaimer">Al enviar, un ingeniero de Energe se contactará con vos en menos de 24 horas hábiles con tu diagnóstico energético personalizado.</p>
         <div class="cot-nav">
           <button class="cot-btn-back" onclick="prevStep(4)">← Anterior</button>
-          <button class="cot-btn-submit" onclick="submitForm()">⚡ Enviar diagnóstico</button>
+          <button class="cot-btn-submit" id="submitBtn" onclick="submitForm()">⚡ Enviar diagnóstico</button>
         </div>
       </div>
 
@@ -362,20 +362,27 @@ function buildSummary() {
   ).join('');
 }
 
+var GAS_URL_COT = 'https://script.google.com/macros/s/AKfycbyMz1NoojZn_fa7GBp_RZ-hwqm-g-5FlW2a6k28pZ22R3m5rpK0m5xPdh5kOhfp5tES4g/exec';
 function submitForm() {
-  const body = `Nueva solicitud de diagnóstico energético desde energe.com.ar\n\n` +
-    `Tipo de instalación: ${formData.tipo}\n` +
-    `Consumo mensual: ${formData.consumo}\n` +
-    `Provincia: ${formData.provincia}\n` +
-    `Nombre: ${formData.nombre}\n` +
-    `Empresa: ${formData.empresa}\n` +
-    `Email: ${formData.email}\n` +
-    `Teléfono: ${formData.telefono}\n` +
-    (formData.comentario ? `Comentario: ${formData.comentario}\n` : '');
-  const subject = encodeURIComponent(`Diagnóstico solar – ${formData.empresa} (${formData.tipo})`);
-  const bodyEnc = encodeURIComponent(body);
-  window.location.href = `mailto:iniciativas@energesa.odoo.com?subject=${subject}&body=${bodyEnc}`;
-  goToStep(5);
+  var btn = document.getElementById('submitBtn');
+  if(btn){ btn.disabled=true; btn.textContent='Enviando…'; }
+  var params = new URLSearchParams({
+    nombre:    formData.nombre,
+    email:     formData.email,
+    telefono:  formData.telefono,
+    provincia: formData.provincia,
+    empresa:   formData.empresa,
+    consumo:   formData.consumo,
+    tipo:      formData.tipo,
+    mensaje:   formData.comentario || '',
+    origen:    'Cotizador solar (ES)'
+  });
+  fetch(GAS_URL_COT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:params.toString()})
+    .then(function(){ goToStep(5); })
+    .catch(function(){
+      if(btn){ btn.disabled=false; btn.textContent='⚡ Enviar diagnóstico'; }
+      alert('No se pudo enviar. Intentá de nuevo o escribinos a contacto@energe.com.ar');
+    });
 }
 
 function resetForm() {

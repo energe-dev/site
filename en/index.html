@@ -492,8 +492,14 @@
             </select>
           </div>
           <textarea id="cf-msg" class="cf-field cf-textarea" placeholder="Tell us about your project or inquiry..." rows="4"></textarea>
-          <button type="submit" class="cf-submit">Send Inquiry →</button>
+          <button type="submit" class="cf-submit" id="cfSubmit">Send Inquiry →</button>
+          <div class="cf-error" id="cfError">Could not send. Please try again or email us at contacto@energe.com.ar</div>
         </form>
+        <div class="cf-success" id="cfSuccess">
+          <div class="cf-success-icon">✓</div>
+          <div class="cf-success-title">Message sent!</div>
+          <div class="cf-success-text">A specialist will reply within 24 hours. Check your spam folder too.</div>
+        </div>
       </div>
       <div class="contact-map-col">
         <div class="map-cover-label">Coverage Network</div>
@@ -642,15 +648,25 @@
 </script>
 
 <script>
+var GAS_URL_CONTACT = 'https://script.google.com/macros/s/AKfycbyMz1NoojZn_fa7GBp_RZ-hwqm-g-5FlW2a6k28pZ22R3m5rpK0m5xPdh5kOhfp5tES4g/exec';
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  var name=document.getElementById('cf-name').value;
-  var email=document.getElementById('cf-email').value;
-  var tel=document.getElementById('cf-tel').value;
-  var prov=document.getElementById('cf-prov').value;
-  var msg=document.getElementById('cf-msg').value;
-  var body='Name: '+name+'%0AEmail: '+email+'%0APhone: '+tel+'%0AProvince: '+prov+'%0A%0AMessage:%0A'+encodeURIComponent(msg);
-  window.location.href='mailto:iniciativas@energesa.odoo.com?subject=Energe Web Inquiry - '+encodeURIComponent(name)+'&body='+body;
+  var form    = this;
+  var btn     = document.getElementById('cfSubmit');
+  var errBox  = document.getElementById('cfError');
+  var success = document.getElementById('cfSuccess');
+  btn.disabled = true; btn.textContent = 'Sending…'; errBox.style.display = 'none';
+  var params = new URLSearchParams({
+    nombre:    document.getElementById('cf-name').value,
+    email:     document.getElementById('cf-email').value,
+    telefono:  document.getElementById('cf-tel').value,
+    provincia: document.getElementById('cf-prov').value,
+    mensaje:   document.getElementById('cf-msg').value,
+    origen:    'Formulario de contacto (EN)'
+  });
+  fetch(GAS_URL_CONTACT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:params.toString()})
+    .then(function(){ form.style.display='none'; success.style.display='flex'; })
+    .catch(function(){ btn.disabled=false; btn.textContent='Send Inquiry →'; errBox.style.display='block'; });
 });
 
 (function(){

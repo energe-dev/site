@@ -310,8 +310,14 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
 .cf-field:focus{border-color:rgba(212,114,26,.6)}
 .cf-field option{background:#1a1208;color:#fff}
 .cf-textarea{resize:vertical;min-height:112px}
-.cf-submit{background:var(--orange);color:#fff;border:none;border-radius:4px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;padding:15px 32px;cursor:pointer;transition:background .2s;align-self:flex-start;margin-top:4px}
-.cf-submit:hover{background:var(--orange-hover)}
+.cf-submit{background:var(--orange);color:#fff;border:none;border-radius:4px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;padding:15px 32px;cursor:pointer;transition:all .2s;align-self:flex-start;margin-top:4px}
+.cf-submit:hover:not(:disabled){background:var(--orange-hover)}
+.cf-submit:disabled{opacity:.7;cursor:default}
+.cf-success{display:none;flex-direction:column;align-items:flex-start;gap:10px;padding:28px 24px;background:rgba(45,138,78,.12);border:1px solid rgba(45,138,78,.35);border-radius:6px;margin-top:4px}
+.cf-success-icon{font-size:28px;line-height:1}
+.cf-success-title{font-size:14px;font-weight:800;color:#5ecf82;letter-spacing:.5px}
+.cf-success-text{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6}
+.cf-error{display:none;font-size:12px;color:#e07070;padding:10px 14px;background:rgba(220,80,80,.1);border:1px solid rgba(220,80,80,.25);border-radius:4px;margin-top:4px}
 .contact-channels{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
 .ch-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.55);text-decoration:none;font-size:12px;font-weight:600;transition:color .2s}
 .ch-item:hover{color:var(--orange-light)}
