@@ -648,7 +648,7 @@
 </script>
 
 <script>
-var GAS_URL_CONTACT = 'https://script.google.com/macros/s/AKfycbxwJUnrcZn0mU9gkkDa1iRFhlwhX_Z20gNCMLeaE_8DR_6qCTpbnynhfgxVImhqyEZkPw/exec';
+var CF_WORKER = 'https://energe-leads.marketing-10f.workers.dev/';
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
   var form    = this;
@@ -664,8 +664,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     mensaje:   document.getElementById('cf-msg').value,
     origen:    'Formulario de contacto (EN)'
   });
-  fetch(GAS_URL_CONTACT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:params.toString()})
-    .then(function(){ form.style.display='none'; success.style.display='flex'; })
+  fetch(CF_WORKER, {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:params.toString()})
+    .then(function(r){ return r.json(); })
+    .then(function(data){ if(data.ok){ form.style.display='none'; success.style.display='flex'; } else{ throw new Error(data.error||'Error'); } })
     .catch(function(){ btn.disabled=false; btn.textContent='Send Inquiry →'; errBox.style.display='block'; });
 });
 
