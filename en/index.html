@@ -491,6 +491,7 @@
               <option>Outside Argentina</option>
             </select>
           </div>
+          <input type="text" id="cf-city" class="cf-field" placeholder="City">
           <textarea id="cf-msg" class="cf-field cf-textarea" placeholder="Tell us about your project or inquiry..." rows="4"></textarea>
           <button type="submit" class="cf-submit" id="cfSubmit">Send Inquiry →</button>
           <div class="cf-error" id="cfError">Could not send. Please try again or email us at contacto@energe.com.ar</div>
@@ -661,6 +662,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     email:     document.getElementById('cf-email').value,
     telefono:  document.getElementById('cf-tel').value,
     provincia: document.getElementById('cf-prov').value,
+    ciudad:    document.getElementById('cf-city').value,
     mensaje:   document.getElementById('cf-msg').value,
     origen:    'Formulario de contacto (EN)'
   });

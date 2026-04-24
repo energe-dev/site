@@ -202,6 +202,10 @@
             <label class="cot-label">Phone / WhatsApp *</label>
             <input class="cot-input" type="tel" id="telefono" placeholder="+54 9 261 000-0000" oninput="checkStep3()"/>
           </div>
+          <div class="cot-field-group">
+            <label class="cot-label">City</label>
+            <input class="cot-input" type="text" id="ciudad" placeholder="e.g. Buenos Aires"/>
+          </div>
           <div class="cot-field-group" style="grid-column:1/-1">
             <label class="cot-label">Additional comments (optional)</label>
             <textarea class="cot-input cot-textarea" id="comentario" placeholder="Tell us more about your installation, whether you have a bidirectional meter, a generator, etc."></textarea>
@@ -294,7 +298,7 @@
 </footer>
 
 <script>
-const formData = { tipo: '', consumo: '', provincia: '', nombre: '', empresa: '', email: '', telefono: '', comentario: '' };
+const formData = { tipo: '', consumo: '', provincia: '', nombre: '', empresa: '', email: '', telefono: '', ciudad: '', comentario: '' };
 let currentStep = 1;
 
 document.querySelectorAll('#tipoCards .cot-card').forEach(card => {
@@ -338,6 +342,7 @@ function nextStep(from) {
     formData.empresa    = document.getElementById('empresa').value.trim();
     formData.email      = document.getElementById('email').value.trim();
     formData.telefono   = document.getElementById('telefono').value.trim();
+    formData.ciudad     = document.getElementById('ciudad').value.trim();
     formData.comentario = document.getElementById('comentario').value.trim();
     buildSummary();
   }
@@ -381,6 +386,7 @@ function submitForm() {
     email:     formData.email,
     telefono:  formData.telefono,
     provincia: formData.provincia,
+    ciudad:    formData.ciudad,
     empresa:   formData.empresa,
     consumo:   formData.consumo,
     tipo:      formData.tipo,

@@ -684,6 +684,7 @@
               <option>Tucumán</option>
             </select>
           </div>
+          <input type="text" id="cf-city" class="cf-field" placeholder="Ciudad">
           <textarea id="cf-msg" class="cf-field cf-textarea" placeholder="Contanos sobre tu proyecto o consulta..." rows="4"></textarea>
           <button type="submit" class="cf-submit" id="cfSubmit">Enviar consulta →</button>
           <div class="cf-error" id="cfError">No se pudo enviar. Intentá de nuevo o escribinos a contacto@energe.com.ar</div>
@@ -822,6 +823,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     email:     document.getElementById('cf-email').value,
     telefono:  document.getElementById('cf-tel').value,
     provincia: document.getElementById('cf-prov').value,
+    ciudad:    document.getElementById('cf-city').value,
     mensaje:   document.getElementById('cf-msg').value,
     origen:    'Formulario de contacto (ES)'
   });
