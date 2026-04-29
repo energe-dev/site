@@ -89,7 +89,7 @@ body > nav{
 .trust-btn:hover:not(:disabled){border-color:var(--orange);color:var(--orange);background:#fff}
 .trust-btn:disabled{opacity:.25;cursor:default}
 .trust-viewport{flex:1;overflow:hidden}
-.trust-track{display:flex;align-items:center;gap:0;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform}
+.trust-track{display:flex;align-items:center;gap:0;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform;flex-wrap:nowrap}
 .trust-logo{flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:64px;opacity:.5;filter:grayscale(1);transition:all .25s;cursor:default;padding:0 14px}
 .trust-logo:hover{opacity:1;filter:grayscale(0)}
 .trust-logo img{max-height:56px;max-width:140px;width:auto;object-fit:contain;display:block}
