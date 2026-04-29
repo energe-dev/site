@@ -41,7 +41,7 @@ body > nav{
 .hero{position:relative;min-height:94vh;display:flex;align-items:center;overflow:hidden}
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url('images/obras/parque-santa-rosa.jpg');
+  background-image:url('images/hero-final.jpg');
   background-size:cover;background-position:center;
   transform: scale(1.1);
   will-change: transform;
