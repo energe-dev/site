@@ -547,8 +547,8 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
   .nav-cta{border-radius:3px;padding:13px 20px!important;text-align:center;width:100%;display:block!important}
 
   /* HERO — column layout so float never overlaps buttons */
-  .hero{min-height:auto;flex-direction:column;align-items:stretch}
-  .hero-content{padding:80px 20px 28px;max-width:100%}
+  .hero{min-height:90vh;flex-direction:column;align-items:stretch}
+  .hero-content{padding:100px 20px 180px;max-width:100%}
   .hero-vline{left:20px}
   .hero-title{font-size:clamp(32px,9vw,52px)}
   .hero-sub{font-size:13px;margin:20px 0 32px}
@@ -616,7 +616,7 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
 @media(max-width:480px){
   .sectors-grid{grid-template-columns:1fr}
   .hero-float{display:none}
-  .hero-content{padding-bottom:130px}
+  .hero-content{padding-bottom:280px}
   .stats-bar{grid-template-columns:1fr}
   .st{border-right:none;border-bottom:1px solid var(--border);padding:16px 20px}
   .st:last-child{border-bottom:none}
