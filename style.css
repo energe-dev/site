@@ -49,7 +49,7 @@ body > nav{
 .hero-noise{
   position:absolute;inset:0;
   background: url('https://grainy-gradients.vercel.app/noise.svg');
-  opacity: 0.15;
+  opacity: 0.08;
   pointer-events: none;
   z-index: 1;
 }
