@@ -130,7 +130,8 @@
 </nav>
 <!-- HERO — fondo: foto real Parque Solar Santa Rosa -->
 <section class="hero">
-<div class="hero-bg"></div>
+<div class="hero-bg" id="heroBg"></div>
+<div class="hero-noise"></div>
 <div class="hero-overlay"></div>
 <div class="hero-tint"></div>
 <div class="hero-vline"></div>
@@ -149,9 +150,9 @@
 </div>
 <!-- Foto flotante: Parque Solar Santa Rosa -->
 <div class="hero-float">
-<img alt="UCA Puerto Madero" src="images/hero-uca.jpg"/>
+<img alt="Parque Solar Santa Rosa" src="images/obras/parque-santa-rosa.jpg"/>
 <div class="hero-float-cap">
-<strong>UCA Puerto Madero</strong>
+<strong>Parque Solar Santa Rosa</strong>
 <span>6.6 MW · 20.000 paneles · Mendoza</span>
 </div>
 </div>
@@ -816,6 +817,15 @@
 
   resize();
 })();
+
+// Parallax Effect
+window.addEventListener('scroll', function() {
+  var scrolled = window.pageYOffset;
+  var heroBg = document.getElementById('heroBg');
+  if (heroBg) {
+    heroBg.style.transform = 'scale(1.1) translateY(' + (scrolled * 0.15) + 'px)';
+  }
+});
 </script>
 <script>
 // ── Formulario de contacto via Google Apps Script ──────────────────────────
