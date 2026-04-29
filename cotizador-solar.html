@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN6YXDNHMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZN6YXDNHMR');
+</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cotizador Solar Gratuito para Empresas e Industrias | Energe Argentina</title>
@@ -386,7 +395,15 @@ function submitForm() {
   fetch(CF_WORKER, {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:params.toString()})
     .then(function(r){ return r.json(); })
     .then(function(data){
-      if(data.ok){ goToStep(5); }
+      if(data.ok){ 
+        goToStep(5); 
+        if(typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            'event_category': 'engagement',
+            'event_label': 'Cotizador Solar ES'
+          });
+        }
+      }
       else{ throw new Error(data.error||'Error'); }
     })
     .catch(function(){
