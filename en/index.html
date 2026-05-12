@@ -72,7 +72,13 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#solutions">Solutions</a></li>
+    <li class="nav-dropdown">
+      <a href="#solutions">Solutions <span class="dd-arrow">▾</span></a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="soluciones-ongrid.html">☀️ On-Grid Solar</a></li>
+        <li><a href="soluciones-offgrid-backup.html">🔋 Off-Grid / Industrial Backup</a></li>
+      </ul>
+    </li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="blog.html">Blog</a></li>
@@ -148,6 +154,7 @@
 </div>
 
 <section class="value-section">
+  <div class="value-inner">
   <div class="anno">✦ Why Choose Energe?</div>
   <div class="val-layout">
     <div>
@@ -174,6 +181,7 @@
         <div class="metric" style="grid-column:1/-1"><div class="metric-num">30-year system lifespan</div><div class="metric-lbl">Quality technology</div></div>
       </div>
     </div>
+  </div>
   </div>
 </section>
 
@@ -349,6 +357,7 @@
 </section>
 
 <section class="sectors-section" id="solutions">
+  <div class="sectors-inner">
   <div class="anno">✦ Industries</div>
   <div class="section-tag">Who We Serve</div>
   <h2 class="section-title">Photovoltaic solutions<br><em>for every industry</em></h2>
@@ -357,6 +366,36 @@
     <div class="sc"><div class="sc-n">02</div><span class="sc-ico">🌿</span><div class="sc-name">Agro-Industry & Wineries</div><div class="sc-desc">Wineries, farms, and cold storage facilities. Energy independence and efficiency to meet sustainability goals.</div></div>
     <div class="sc"><div class="sc-n">03</div><span class="sc-ico">🏪</span><div class="sc-name">Large Retail</div><div class="sc-desc">Supermarkets and retail chains. On-grid systems with bidirectional metering under Argentina's Distributed Generation Law.</div></div>
     <div class="sc"><div class="sc-n">04</div><span class="sc-ico">🏛️</span><div class="sc-name">Public & Educational Entities</div><div class="sc-desc">Government agencies, schools, and public spaces. Sustainability with social impact and reduced operating costs.</div></div>
+    <div class="sc"><div class="sc-n">05</div><span class="sc-ico">🔋</span><div class="sc-name">Industrial Backup & Off-Grid</div><div class="sc-desc">Remote sites and critical applications. Total energy independence with integrated shelter, LiFePO4 batteries and solar generation.</div></div>
+  </div>
+  </div>
+</section>
+
+<!-- BACKUP BANNER (teaser) -->
+<section class="backup-banner" id="backup-industrial">
+  <div class="backup-banner-inner">
+    <div class="backup-banner-content">
+      <div class="anno">✦ New solution</div>
+      <h2 class="backup-banner-title">Power where<br><em>the grid doesn't reach</em></h2>
+      <p class="backup-banner-sub">Integrated autonomous systems combining solar generation and high-capacity storage. Built for remote locations, extreme conditions and mission-critical applications — fully independent of the electrical grid.</p>
+      <ul class="backup-banner-bullets">
+        <li>Complete autonomy with no grid connection required</li>
+        <li>High-density energy storage with long cycle life</li>
+        <li>Rapid deployment, plug & play, extreme climate rated</li>
+      </ul>
+      <a href="soluciones-offgrid-backup.html" class="btn-p" style="display:inline-flex">See the full solution →</a>
+    </div>
+    <div class="backup-banner-visual">
+      <div class="backup-banner-img-wrap">
+        <img src="../images/shelter-backup.jpg" alt="Industrial Off-Grid Backup System Energe" />
+        <div class="backup-banner-stats">
+          <div class="backup-stat"><div class="backup-stat-val">128 kWh</div><div class="backup-stat-lbl">Storage</div></div>
+          <div class="backup-stat"><div class="backup-stat-val">10 kWp</div><div class="backup-stat-lbl">Solar</div></div>
+          <div class="backup-stat"><div class="backup-stat-val">+8,000</div><div class="backup-stat-lbl">Cycles</div></div>
+          <div class="backup-stat"><div class="backup-stat-val">IP65</div><div class="backup-stat-lbl">Protection</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -415,6 +454,21 @@
 <section class="cta-section">
   <div class="cta-img"></div>
   <div class="cta-overlay"></div>
+  <div class="cta-inner">
+  <div class="cta-content">
+    <div class="anno" style="border-color:rgba(212,114,26,.5)">✦ Contact / CTA</div>
+    <h2 class="cta-title">How much can you<br><em>save per year?</em></h2>
+    <p class="cta-sub">A free energy assessment with our engineering team will tell you exactly how much you can save on costs and when you'll recover your investment.</p>
+    <div class="cta-btns">
+      <a href="cotizador-solar.html" class="btn-pl">⚡ Free Energy Assessment</a>
+      <a href="#contact" class="btn-ghost">Talk to a Specialist →</a>
+    </div>
+    <div class="cta-contacts">
+      <div class="cc"><div class="cc-lbl">Email</div><div class="cc-val">contacto@energe.com.ar</div></div>
+      <div class="cc"><div class="cc-lbl">Phone</div><div class="cc-val">+54 261 242 4493</div></div>
+      <div class="cc"><div class="cc-lbl">Coverage</div><div class="cc-val">All of Argentina</div></div>
+    </div>
+  </div>
   <div class="cta-chart">
     <div class="cta-chart-label">Impact on your electricity bill</div>
     <svg class="cta-chart-svg" viewBox="0 0 480 238" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -454,19 +508,6 @@
       <div class="cta-legend-item"><span class="cta-legend-solid"></span><span>With solar</span></div>
     </div>
   </div>
-  <div class="cta-content">
-    <div class="anno" style="border-color:rgba(212,114,26,.5)">✦ Contact / CTA</div>
-    <h2 class="cta-title">How much can you<br><em>save per year?</em></h2>
-    <p class="cta-sub">A free energy assessment with our engineering team will tell you exactly how much you can save on costs and when you'll recover your investment.</p>
-    <div class="cta-btns">
-      <a href="cotizador-solar.html" class="btn-pl">⚡ Free Energy Assessment</a>
-      <a href="#contact" class="btn-ghost">Talk to a Specialist →</a>
-    </div>
-    <div class="cta-contacts">
-      <div class="cc"><div class="cc-lbl">Email</div><div class="cc-val">contacto@energe.com.ar</div></div>
-      <div class="cc"><div class="cc-lbl">Phone</div><div class="cc-val">+54 261 242 4493</div></div>
-      <div class="cc"><div class="cc-lbl">Coverage</div><div class="cc-val">All of Argentina</div></div>
-    </div>
   </div>
 </section>
 
@@ -583,9 +624,9 @@
       <div class="ft-col-title">Quick Links</div>
       <ul class="ft-nav-list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="soluciones-ongrid.html">On-Grid Solar</a></li>
+        <li><a href="soluciones-offgrid-backup.html">Off-Grid / Backup</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="cotizador-solar.html">Get a Quote</a></li>
       </ul>
