@@ -843,12 +843,7 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
   .blog-cats-bar{padding:0 20px}
   .blog-index-wrap{padding:48px 20px}
   .blog-index-grid{grid-template-columns:1fr}
-  .article-hero{height:260px}
-  .article-hero-content{padding:24px 20px}
-  .article-wrap{grid-template-columns:1fr;padding:40px 20px;gap:40px}
-  .article-sidebar{position:static}
-  .article-related{padding:40px 20px}
-  .article-related-grid{grid-template-columns:1fr}
+  .article-hero{height:240px}
 }
 
 @media(min-width:481px) and (max-width:768px){
@@ -898,8 +893,18 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
   .cf-field,.cot-input,.cot-select,.cot-textarea{font-size:16px}
 
   /* Tablas de artículos — scroll horizontal */
-  .article-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap}
+  .article-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;font-size:12px}
   .article-table thead,.article-table tbody,.article-table tr{display:table;width:100%}
+  .article-table th,.article-table td{padding:9px 12px}
+
+  /* Article layout — colapsa sidebar a 1 columna en mobile */
+  .article-wrap{grid-template-columns:1fr!important;padding:32px 20px!important;gap:32px!important}
+  .article-sidebar{position:static!important}
+  .article-hero{height:280px}
+  .article-hero-content{padding:24px 20px}
+  .article-body{font-size:15px}
+  .article-related{padding:40px 20px}
+  .article-related-grid{grid-template-columns:1fr}
 
   /* CTA inline dentro de artículo — apilado */
   .article-cta-box{flex-direction:column;align-items:flex-start;gap:16px}
