@@ -705,10 +705,10 @@ footer::before{content:'';position:absolute;top:-1px;left:96px;right:96px;height
 /* ═══════════════════════════════════════
    HAMBURGER NAV
 ═══════════════════════════════════════ */
-.nav-hamburger{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;background:none;border:none;cursor:pointer;padding:0;z-index:1100}
+.nav-hamburger{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;background:none;border:none;cursor:pointer;padding:0;z-index:2100}
 .nav-hamburger span{display:block;height:2px;background:var(--text-soft);border-radius:2px;transition:all .3s}
-.nav-hamburger.is-open{position:fixed;top:22px;right:20px;z-index:2100}
-.nav-hamburger.is-open span{background:var(--orange);height:2.5px}
+.nav-hamburger.is-open{z-index:2101}
+.nav-hamburger.is-open span{background:var(--orange)!important;height:3px!important}
 .nav-hamburger.is-open span:nth-child(1){transform:translateY(9px) rotate(45deg)}
 .nav-hamburger.is-open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .nav-hamburger.is-open span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
@@ -754,8 +754,8 @@ footer::before{content:'';position:absolute;top:-1px;left:96px;right:96px;height
   .mockup-bar{font-size:8px;letter-spacing:1.5px}
 
   /* NAV */
-  body > nav{padding:0 20px;height:64px;top:0;z-index:2000}
-  .nav-hamburger{display:flex;position:relative;z-index:2100}
+  body > nav{padding:0 20px;height:64px;top:0;z-index:2000;position:sticky}
+  .nav-hamburger{display:flex;position:absolute;right:20px;top:22px;z-index:2100}
   .nav-links{
     display:flex;flex-direction:column;align-items:flex-start;gap:0;
     position:fixed;top:0;right:-100%;width:80vw;max-width:300px;height:100vh;
