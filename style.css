@@ -851,7 +851,7 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
   .blog-index-grid{grid-template-columns:1fr 1fr}
 }
 
-@media(max-width:1024px){
+@media(min-width:769px) and (max-width:1024px){
   .blog-preview-section{padding:72px 32px}
   .blog-index-wrap{padding:56px 32px}
   .blog-hero{padding:72px 32px 56px}
