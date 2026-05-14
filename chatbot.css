@@ -302,11 +302,27 @@
 }
 
 /* Body lock when bot is open on mobile */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  html.bot-open, 
   body.bot-open {
     overflow: hidden !important;
-    height: 100vh !important;
+    height: 100% !important;
     position: fixed !important;
     width: 100% !important;
+    touch-action: none !important;
+  }
+  
+  /* Ensure the bot container itself can still be interacted with */
+  #energe-bot-container {
+    touch-action: auto !important;
+  }
+  
+  #bot-window {
+    touch-action: auto !important;
+  }
+
+  #bot-messages {
+    touch-action: pan-y !important;
+    overscroll-behavior: contain !important;
   }
 }

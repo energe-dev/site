@@ -81,7 +81,8 @@ const EnergeBot = {
         launcher.addEventListener('click', () => {
             this.isOpen = !this.isOpen;
             botWindow.style.display = this.isOpen ? 'flex' : 'none';
-            if (window.innerWidth <= 480) {
+            if (window.innerWidth <= 768) {
+                document.documentElement.classList.toggle('bot-open', this.isOpen);
                 document.body.classList.toggle('bot-open', this.isOpen);
             }
         });
@@ -89,6 +90,7 @@ const EnergeBot = {
         closeBtn.addEventListener('click', () => {
             this.isOpen = false;
             botWindow.style.display = 'none';
+            document.documentElement.classList.remove('bot-open');
             document.body.classList.remove('bot-open');
         });
 
