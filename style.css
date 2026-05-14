@@ -893,10 +893,28 @@ footer{background:#0d0a06;border-top:1px solid rgba(255,255,255,.08);padding:64p
   /* iOS Safari: impide zoom al tocar inputs (font-size < 16px lo dispara) */
   .cf-field,.cot-input,.cot-select,.cot-textarea{font-size:16px}
 
-  /* Tablas de artículos — scroll horizontal */
-  .article-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;font-size:12px}
-  .article-table thead,.article-table tbody,.article-table tr{display:table;width:100%}
-  .article-table th,.article-table td{padding:9px 12px}
+  /* Tablas de artículos — scroll horizontal fluido */
+  .article-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: normal;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+  }
+  .article-table thead, .article-table tbody {
+    display: table;
+    width: 100%;
+    min-width: 600px;
+  }
+  .article-table th, .article-table td {
+    padding: 12px 16px !important;
+    font-size: 13px !important;
+    line-height: 1.4;
+  }
 
   /* Article layout — colapsa sidebar a 1 columna en mobile */
   .article-wrap{
