@@ -11,7 +11,7 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 10000;
+  z-index: 99999;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -99,6 +99,9 @@
   flex: 1;
   padding: 20px;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -293,7 +296,7 @@
 }
 
 #bot-close svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   fill: white;
 }
