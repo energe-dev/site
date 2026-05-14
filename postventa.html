@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN6YXDNHMR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-ZN6YXDNHMR');
+  </script>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Servicio Postventa y Soporte Técnico | Energe</title>
+  <meta content="Solicitá soporte técnico oficial para tus sistemas de energía solar Energe. Gestión de incidencias postventa para equipos on-grid, off-grid e industriales." name="description" />
+  <meta content="index, follow" name="robots" />
+  <link href="https://energe.com.ar/postventa" rel="canonical" />
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="images/favicon.png" rel="icon" type="image/png" />
+  <link href="style.css?v=1.02" rel="stylesheet" />
+  <link href="chatbot.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="mockup-bar">✦ Especialistas en soluciones Fotovoltaicas Industriales en Argentina ✦</div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><a href="index.html"><img src="images/logos/logo-energe.png" alt="Energe" /></a></div>
+    <button class="nav-hamburger" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#soluciones">Soluciones</a></li>
+      <li><a href="index.html#obras">Obras realizadas</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="cotizador-solar.html" class="nav-cta">Cotizá tu proyecto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO POSTVENTA -->
+  <section class="cot-hero">
+    <div class="cot-hero-content">
+      <div class="section-tag">Servicio Postventa</div>
+      <h1 class="cot-hero-title">Soporte Técnico<br><em>Especializado</em></h1>
+      <p class="cot-hero-sub">Gestionamos tus incidencias técnicas de forma directa. Completá el formulario para que nuestro equipo de postventa analice tu caso y genere un ticket en nuestro sistema Odoo.</p>
+    </div>
+  </section>
+
+  <!-- FORMULARIO POSTVENTA -->
+  <section class="cotizador-section" id="postventa">
+    <div class="cotizador-inner">
+      <!-- Panel izquierdo -->
+      <div class="cotizador-left">
+        <div class="section-tag" style="color:var(--orange);border-color:rgba(232,136,46,.3)">Garantía de Calidad</div>
+        <h2 class="cotizador-heading">Tu inversión,<br><em>siempre operativa</em></h2>
+        <p class="cotizador-sub">En Energe acompañamos la vida útil de tu equipo. Nuestra área de postventa centraliza las solicitudes para brindar una respuesta ágil y técnica.</p>
+        <ul class="cotizador-trust">
+          <li><span class="ct-ico">✓</span> Generación de ticket oficial en Odoo</li>
+          <li><span class="ct-ico">✓</span> Análisis por ingenieros especializados</li>
+          <li><span class="ct-ico">✓</span> Seguimiento de incidencias en tiempo real</li>
+          <li><span class="ct-ico">✓</span> Repuestos originales y soporte oficial</li>
+        </ul>
+      </div>
+
+      <!-- Panel derecho: formulario -->
+      <div class="cotizador-right">
+        <form id="postventaForm" class="cf">
+          <div class="cot-step-title" style="margin-bottom:10px">Datos del Titular</div>
+          <p style="font-size:12px; color:var(--text-muted); margin-bottom:24px">Ingresá los datos tal cual figuran en tu factura de compra.</p>
+          
+          <div class="cot-fields">
+            <div class="cot-field-group" style="grid-column: 1 / -1;">
+              <label class="cot-label">Titular o Razón Social *</label>
+              <input class="cot-input" type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez o Industrias SA" required />
+            </div>
+            <div class="cot-field-group">
+              <label class="cot-label">Email del Titular *</label>
+              <input class="cot-input" type="email" id="email" name="email" placeholder="correo@empresa.com" required />
+            </div>
+            <div class="cot-field-group">
+              <label class="cot-label">Teléfono de contacto *</label>
+              <input class="cot-input" type="tel" id="telefono" name="telefono" placeholder="+54 9 261 000-0000" required />
+            </div>
+            <div class="cot-field-group" style="grid-column: 1 / -1;">
+              <label class="cot-label">Dirección del equipo *</label>
+              <input class="cot-input" type="text" id="direccion" name="direccion" placeholder="Calle, Nro, Localidad y Provincia" required />
+            </div>
+            <div class="cot-field-group" style="grid-column: 1 / -1;">
+              <label class="cot-label">Tipo de equipo *</label>
+              <select class="cot-select" id="equipo" name="equipo" required>
+                <option value="">Seleccioná una opción</option>
+                <option value="Fotovoltaico On grid">Fotovoltaico On grid</option>
+                <option value="Fotovoltaico Off grid / Híbridos">Fotovoltaico Off grid / Híbridos</option>
+                <option value="Termotanques y equipos combinados">Termotanques y equipos combinados</option>
+                <option value="Climatización de piscinas">Climatización de piscinas</option>
+                <option value="Otros">Otros</option>
+              </select>
+            </div>
+            <div class="cot-field-group" style="grid-column: 1 / -1;">
+              <label class="cot-label">Detalle del problema o incidencia *</label>
+              <textarea class="cot-input" id="problema" name="problema" placeholder="Describí brevemente lo que sucede con el equipo..." style="min-height:120px" required></textarea>
+            </div>
+          </div>
+
+          <div style="margin-top:32px">
+            <button type="submit" class="cot-btn-submit" style="width:100%">Generar Ticket de Soporte ⚡</button>
+          </div>
+        </form>
+
+        <!-- Mensaje Especial para Termos/Piscinas (Oculto por defecto) -->
+        <div id="derivacionEspecial" style="display:none; margin-top:32px; padding:24px; background:rgba(232,136,46,.05); border:1px solid rgba(232,136,46,.2); border-radius:8px; text-align:center;">
+          <div style="font-size:24px; margin-bottom:12px">📢</div>
+          <h3 style="font-size:16px; font-weight:800; color:var(--text); margin-bottom:10px" id="derivacionTitle">Aviso importante</h3>
+          <p id="derivacionText" style="font-size:13px; color:var(--text-soft); line-height:1.6; margin-bottom:20px"></p>
+          <a href="#" id="waLink" target="_blank" class="cot-btn-submit" style="text-decoration:none; display:inline-block; background:#25d366">Contactar por WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="ft-main">
+      <div class="ft-col ft-brand">
+        <div class="ft-logo"><img src="images/logos/logo-energe-footer.png" alt="Energe" /></div>
+        <p class="ft-desc"><strong>Somos</strong> una empresa dedicada al desarrollo de soluciones de energía solar térmica y fotovoltaica. Desde 2007, impulsamos el ahorro energético y el cuidado del ambiente.</p>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-title">Contacto</div>
+        <ul class="ft-contact-list">
+          <li><span>261 242 4493</span></li>
+          <li><span>contacto@energe.com.ar</span></li>
+          <li><span>Alsina 2550, Maipú, Mendoza</span></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-title">Accesos</div>
+        <ul class="ft-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="soluciones-ongrid.html">Solar On-Grid</a></li>
+          <li><a href="soluciones-offgrid-backup.html">Off-Grid / Backup</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="cotizador-solar.html">Cotizador</a></li>
+          <li><a href="postventa.html">Servicio Postventa</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-title">Redes sociales</div>
+        <ul class="ft-social-list">
+          <li><a href="https://www.instagram.com/energe.ar" target="_blank">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/energe" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span><a href="privacidad.html">Política de privacidad</a></span>
+      <span><a href="legales.html">Legales</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // Nav Toggle
+    (function(){
+      var btn=document.getElementById('navToggle'), nav=document.getElementById('navLinks');
+      btn.addEventListener('click',function(){ var open=nav.classList.toggle('nav-open'); btn.classList.toggle('is-open',open); });
+    })();
+
+    // Form Logic
+    const form = document.getElementById('postventaForm');
+    const derivacionBox = document.getElementById('derivacionEspecial');
+    const derivacionTitle = document.getElementById('derivacionTitle');
+    const derivacionText = document.getElementById('derivacionText');
+    const waLink = document.getElementById('waLink');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const data = {
+        nombre: document.getElementById('nombre').value,
+        email: document.getElementById('email').value,
+        telefono: document.getElementById('telefono').value,
+        direccion: document.getElementById('direccion').value,
+        equipo: document.getElementById('equipo').value,
+        problema: document.getElementById('problema').value
+      };
+
+      // Lógica de derivación (basada en el bot)
+      const isTermo = data.equipo === 'Termotanques y equipos combinados';
+      const isPiscina = data.equipo === 'Climatización de piscinas';
+
+      if (isTermo || isPiscina) {
+        form.style.display = 'none';
+        derivacionBox.style.display = 'block';
+        
+        const tecnico = isTermo ? 'Miguel Rivera' : 'Mauricio Prati';
+        const tel = isTermo ? '5492612414275' : '5492616357579';
+        
+        derivacionTitle.innerText = `Servicio Técnico de ${data.equipo}`;
+        derivacionText.innerHTML = `Informamos que actualmente Energe ya no realiza el mantenimiento técnico de estos equipos. Para tu solución, te derivamos con <strong>${tecnico}</strong>, profesional independiente de confianza.`;
+        
+        const msg = `Hola ${tecnico}, mi nombre es ${data.nombre} y te contacto desde el sitio de Energe por una incidencia en un equipo de ${data.equipo}.\nUbicación: ${data.direccion}\nProblema: ${data.problema}`;
+        waLink.href = `https://wa.me/${tel}?text=${encodeURIComponent(msg)}`;
+      } else {
+        // Enviar vía Email a Odoo
+        const subject = `Incidencia Postventa - ${data.nombre}`;
+        const body = `Titular/Empresa: ${data.nombre}\nEmail: ${data.email}\nTeléfono: ${data.telefono}\nUbicación: ${data.direccion}\nEquipo: ${data.equipo}\n\nProblema:\n${data.problema}\n\nOrigen: Formulario Postventa Web`;
+        
+        const mailto = `mailto:post-venta@energesa.odoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+        
+        alert("¡Gracias! Se abrirá tu aplicación de correo para enviar el ticket a nuestro sistema Odoo.");
+      }
+    });
+  </script>
+</body>
+</html>
