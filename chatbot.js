@@ -73,19 +73,23 @@ const EnergeBot = {
 
     addEventListeners() {
         const launcher = document.getElementById('bot-launcher');
-        const window = document.getElementById('bot-window');
+        const botWindow = document.getElementById('bot-window');
         const closeBtn = document.getElementById('bot-close');
         const input = document.getElementById('bot-user-input');
         const sendBtn = document.getElementById('bot-send-btn');
         
         launcher.addEventListener('click', () => {
             this.isOpen = !this.isOpen;
-            window.style.display = this.isOpen ? 'flex' : 'none';
+            botWindow.style.display = this.isOpen ? 'flex' : 'none';
+            if (window.innerWidth <= 480) {
+                document.body.classList.toggle('bot-open', this.isOpen);
+            }
         });
 
         closeBtn.addEventListener('click', () => {
             this.isOpen = false;
-            window.style.display = 'none';
+            botWindow.style.display = 'none';
+            document.body.classList.remove('bot-open');
         });
 
         const handleSend = () => {
