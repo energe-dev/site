@@ -1,8 +1,9 @@
-# Redirects 301 for SEO
+# Energe - Optimized .htaccess for Hostinger/LiteSpeed
+Options -MultiViews
 RewriteEngine On
 RewriteBase /
 
-# 1. Force HTTPS and www (Highly recommended for SEO)
+# 1. Force HTTPS (Highly recommended)
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
@@ -15,17 +16,24 @@ RewriteCond %{THE_REQUEST} ^GET\ (.*)\.html\ HTTP [NC]
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
 # 4. Internally map clean URL to .html file (Internal Rewrite)
+# This rule is more robust for LiteSpeed/Hostinger
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [L]
+RewriteRule ^(.*)$ $1.html [QSA,L]
 
-# 5. Redirect common 404 patterns to new pages
-Redirect 301 /noticias/ /blog
-Redirect 301 /empresa/ /#contacto
-Redirect 301 /paneles-solares/ /soluciones-ongrid
-Redirect 301 /contacto/ /#contacto
-Redirect 301 /productos/ /#soluciones
+# 5. Handle /en/ subfolder specifically if needed
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/en/$1.html -f
+RewriteRule ^en/(.*)$ en/$1.html [QSA,L]
 
-# 6. Custom 404 page
+# 6. Redirects 301 (Manual cleanup)
+Redirect 301 /noticias /blog
+Redirect 301 /empresa /#contacto
+Redirect 301 /paneles-solares /soluciones-ongrid
+Redirect 301 /contacto /#contacto
+Redirect 301 /productos /#soluciones
+
+# 7. Custom 404
 ErrorDocument 404 /404.html

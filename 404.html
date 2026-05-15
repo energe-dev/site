@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>404 - Página no encontrada | Energe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link href="/style.css" rel="stylesheet" />
+    <style>
+        .error-page {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #0d0a06;
+            color: #fff;
+            padding: 20px;
+        }
+        .error-container {
+            max-width: 600px;
+        }
+        .error-code {
+            font-size: clamp(100px, 15vw, 180px);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #D4721A 0%, #E8882E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -5px;
+        }
+        .error-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .error-msg {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        .error-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-p {
+            background: #D4721A;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        .btn-p:hover {
+            background: #E8882E;
+            transform: translateY(-2px);
+        }
+        .btn-o {
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        .btn-o:hover {
+            background: rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Parece que te perdiste en el espacio solar</h1>
+            <p class="error-msg">La página que estás buscando no existe o ha sido movida. Pero no te preocupes, el sol siempre sale por algún lado.</p>
+            <div class="error-btns">
+                <a href="/" class="btn-p">Volver al inicio</a>
+                <a href="/cotizador-solar" class="btn-o">Cotizar mi proyecto</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
