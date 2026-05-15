@@ -1,5 +1,4 @@
-# Energe - Optimized .htaccess for Hostinger/LiteSpeed
-Options -MultiViews
+# Energe - Reverted .htaccess
 RewriteEngine On
 RewriteBase /
 
@@ -7,33 +6,15 @@ RewriteBase /
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# 2. Remove index.html from URL
+# 2. Redirect index.html to root
 RewriteCond %{THE_REQUEST} ^GET\ /index\.html\ HTTP [NC]
 RewriteRule ^index\.html$ / [R=301,L]
 
-# 3. Remove .html extension from URL (External Redirect)
-RewriteCond %{THE_REQUEST} ^GET\ (.*)\.html\ HTTP [NC]
-RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+# 3. Handle 404 (Keep the custom one)
+ErrorDocument 404 /404.html
 
-# 4. Internally map clean URL to .html file (Internal Rewrite)
-# This rule is more robust for LiteSpeed/Hostinger
+# 4. (Optional) Redirect clean URLs to .html if someone tries them
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [QSA,L]
-
-# 5. Handle /en/ subfolder specifically if needed
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{DOCUMENT_ROOT}/en/$1.html -f
-RewriteRule ^en/(.*)$ en/$1.html [QSA,L]
-
-# 6. Redirects 301 (Manual cleanup)
-Redirect 301 /noticias /blog
-Redirect 301 /empresa /#contacto
-Redirect 301 /paneles-solares /soluciones-ongrid
-Redirect 301 /contacto /#contacto
-Redirect 301 /productos /#soluciones
-
-# 7. Custom 404
-ErrorDocument 404 /404.html
+RewriteRule ^(.*)$ $1.html [R=301,L]
