@@ -47,7 +47,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet" />
   <!-- Preload LCP image -->
-  <link as="image" href="images/hero-final.jpg" rel="preload" />
+  <link as="image" href="images/hero-drone.jpg?v=1.0" rel="preload" />
   <link href="images/favicon.png" rel="icon" type="image/png" />
   <link href="style.css?v=1.01" rel="stylesheet" />
   <link href="chatbot.css" rel="stylesheet" />
@@ -195,8 +195,7 @@
 </head>
 
 <body>
-  <div class="mockup-bar">✦Especialistas en soluciones Fotovoltaicas Industriales en Argentina✦ </div>
-  <!-- NAV -->
+  <div class="mockup-bar">✦ Especialistas en soluciones Fotovoltaicas Industriales en Argentina ✦</div>
   <nav>
     <div class="nav-logo"><a href="./"><img alt="Energe" src="images/logos/logo-energe.png" width="150" height="40" /></a></div>
     <button aria-label="Abrir menú" class="nav-hamburger" id="navToggle">
@@ -212,12 +211,11 @@
         </ul>
       </li>
       <li><a href="#obras">Obras realizadas</a></li>
-      <li><a href="#contacto">Contacto</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="preguntas-frecuentes.html">FAQ</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
       <li><a class="nav-cta" href="cotizador-solar.html">Cotizá tu proyecto</a></li>
-      <li class="nav-lang-li"><a class="lang-btn active" href="./">ES</a><span class="lang-sep">|</span><a
-          class="lang-btn" href="en/.html">EN</a></li>
+      <li class="nav-lang-li"><a class="lang-btn active" href="./">ES</a><span class="lang-sep">|</span><a class="lang-btn" href="en/">EN</a></li>
     </ul>
   </nav>
   <!-- HERO — fondo: foto real Parque Solar Santa Rosa -->
@@ -229,11 +227,7 @@
     <div class="hero-vline"></div>
     <div class="hero-content">
       <div class="hero-eyebrow"><span>Soluciones Fotovoltaicas Industriales</span></div>
-      <h1 class="hero-title">
-        <span class="line1">Energía Solar para Empresas e Industrias en Argentina.</span>
-        PANELES SOLARES.
-        <span class="accent">ROI GARANTIZADO.</span>
-      </h1>
+      <h1 class="hero-title">ENERGÍA SOLAR <br class="m-br"> PARA EMPRESAS <br class="m-br"> E INDUSTRIAS EN <br class="m-br"> ARGENTINA.</h1>
       <p class="hero-sub">Líderes en <strong>energía solar fotovoltaica</strong> para industrias, empresas y grandes comercios en Argentina. Diseño e instalación de <strong>paneles solares</strong> a medida con ingeniería propia, presencia nacional y más de 19 años de trayectoria.</p>
       <div class="hero-actions">
         <a class="btn-p" href="cotizador-solar.html"><svg viewBox="0 0 24 24" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:currentColor;fill:none;stroke-width:2.5"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Quiero mi diagnóstico energético</a>
@@ -1062,260 +1056,12 @@
       </div>
     </div>
   </section>
-  <!-- CONTACTO -->
-  <section class="contact-section" id="contacto">
-    <div class="contact-wrap">
-      <div class="contact-head">
-        <div class="anno" style="border-color:rgba(212,114,26,.35)">✦ Contacto</div>
-        <div class="section-tag">Contacto</div>
-        <h2 class="section-title" style="color:#fff">Trabajamos en todo<br /><em>el país</em></h2>
-      </div>
-      <div class="contact-cols">
-        <!-- FORMULARIO -->
-        <div class="contact-form-col">
-          <p class="contact-lead">Un especialista de nuestra red responde en menos de 24 hs.</p>
-          <form class="cf" id="contactForm">
-            <div class="cf-row">
-              <input class="cf-field" id="cf-name" placeholder="Nombre y apellido" required="" type="text" />
-              <input class="cf-field" id="cf-email" placeholder="Email" required="" type="email" />
-            </div>
-            <div class="cf-row">
-              <input class="cf-field" id="cf-tel" placeholder="Teléfono" type="tel" />
-              <select class="cf-field" id="cf-prov">
-                <option value="">Provincia</option>
-                <option>Buenos Aires</option>
-                <option>CABA</option>
-                <option>Catamarca</option>
-                <option>Chaco</option>
-                <option>Chubut</option>
-                <option>Córdoba</option>
-                <option>Corrientes</option>
-                <option>Entre Ríos</option>
-                <option>Formosa</option>
-                <option>Jujuy</option>
-                <option>La Pampa</option>
-                <option>La Rioja</option>
-                <option>Mendoza</option>
-                <option>Misiones</option>
-                <option>Neuquén</option>
-                <option>Río Negro</option>
-                <option>Salta</option>
-                <option>San Juan</option>
-                <option>San Luis</option>
-                <option>Santa Cruz</option>
-                <option>Santa Fe</option>
-                <option>Santiago del Estero</option>
-                <option>Tierra del Fuego</option>
-                <option>Tucumán</option>
-              </select>
-            </div>
-            <input class="cf-field" id="cf-city" placeholder="Ciudad" type="text" />
-            <textarea class="cf-field cf-textarea" id="cf-msg" placeholder="Contanos sobre tu proyecto o consulta..."
-              rows="4"></textarea>
-            <button class="cf-submit" id="cfSubmit" type="submit">Enviar consulta →</button>
-            <div class="cf-error" id="cfError">No se pudo enviar. Intentá de nuevo o escribinos a contacto@energe.com.ar
-            </div>
-          </form>
-          <div class="cf-success" id="cfSuccess">
-            <div class="cf-success-icon">✓</div>
-            <div class="cf-success-title">¡Mensaje enviado!</div>
-            <div class="cf-success-text">Un especialista te responde en menos de 24 hs. Revisá también tu bandeja de
-              spam.</div>
-          </div>
-        </div>
-        <!-- MAPA -->
-        <div class="contact-map-col">
-          <div class="map-cover-label">Red de cobertura</div>
-          <div class="map-svg-wrap">
-            <svg class="arg-map" fill="none" viewbox="0 0 260 500" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="128" cy="260" fill="rgba(212,114,26,0.05)" rx="80" ry="190"></ellipse>
-              <path class="arg-path"
-                d="M 60,10 L 106,10 L 142,10 L 168,28 L 192,52 L 220,58 L 240,62 L 222,82 L 204,108 L 186,132 L 180,158 L 186,184 L 196,206 L 204,230 L 200,252 L 178,272 L 150,296 L 126,322 L 102,350 L 84,378 L 70,408 L 55,440 L 50,464 L 62,480 L 70,490 L 80,484 L 72,464 L 62,440 L 50,412 L 38,382 L 26,352 L 24,322 L 24,292 L 26,262 L 30,232 L 34,202 L 38,174 L 44,148 L 50,122 L 56,96 L 60,68 L 58,42 Z">
-              </path>
-              <!-- BUENOS AIRES -->
-              <g class="pin-group" data-name="Energe Buenos Aires" data-px="184" data-py="190"
-                data-url="https://www.google.com/maps/search/Energe+Buenos+Aires">
-                <circle cx="184" cy="190" fill="transparent" r="22"></circle>
-                <circle class="pin-ring" cx="184" cy="190" fill="rgba(232,136,46,0.12)" r="11"
-                  style="animation-delay:0s"></circle>
-                <circle cx="184" cy="190" fill="#E8882E" r="4.5"></circle>
-                <text fill="rgba(255,255,255,0.75)" font-family="Montserrat,sans-serif" font-size="8.5"
-                  font-weight="700" x="190" y="188">Buenos Aires</text>
-              </g>
-              <!-- ROSARIO -->
-              <g class="pin-group" data-name="Energe Rosario" data-px="160" data-py="168"
-                data-url="https://www.google.com/maps/search/Energe+Rosario">
-                <circle cx="160" cy="168" fill="transparent" r="22"></circle>
-                <circle class="pin-ring" cx="160" cy="168" fill="rgba(232,136,46,0.12)" r="11"
-                  style="animation-delay:0.7s"></circle>
-                <circle cx="160" cy="168" fill="#E8882E" r="4.5"></circle>
-                <text fill="rgba(255,255,255,0.75)" font-family="Montserrat,sans-serif" font-size="8.5"
-                  font-weight="700" x="166" y="166">Rosario</text>
-              </g>
-              <!-- MENDOZA -->
-              <g class="pin-group" data-name="Energe Mendoza" data-px="50" data-py="170"
-                data-url="https://www.google.com/maps/search/Energe+Mendoza">
-                <circle cx="50" cy="170" fill="transparent" r="22"></circle>
-                <circle class="pin-ring" cx="50" cy="170" fill="rgba(232,136,46,0.12)" r="11"
-                  style="animation-delay:1.4s"></circle>
-                <circle cx="50" cy="170" fill="#E8882E" r="4.5"></circle>
-                <text fill="rgba(255,255,255,0.75)" font-family="Montserrat,sans-serif" font-size="8.5"
-                  font-weight="700" x="56" y="168">Mendoza</text>
-              </g>
-              <!-- LA PAMPA -->
-              <g class="pin-group" data-name="Energe La Pampa" data-px="110" data-py="222"
-                data-url="https://www.google.com/maps/search/Energe+La+Pampa">
-                <circle cx="110" cy="222" fill="transparent" r="22"></circle>
-                <circle class="pin-ring" cx="110" cy="222" fill="rgba(232,136,46,0.12)" r="11"
-                  style="animation-delay:2.1s"></circle>
-                <circle cx="110" cy="222" fill="#E8882E" r="4.5"></circle>
-                <text fill="rgba(255,255,255,0.75)" font-family="Montserrat,sans-serif" font-size="8.5"
-                  font-weight="700" x="116" y="220">La Pampa</text>
-              </g>
-              <!-- PATAGONIA -->
-              <g class="pin-group" data-name="Energe Patagonia" data-px="68" data-py="356"
-                data-url="https://www.google.com/maps/search/Energe+Patagonia">
-                <circle cx="68" cy="356" fill="transparent" r="22"></circle>
-                <circle class="pin-ring" cx="68" cy="356" fill="rgba(232,136,46,0.12)" r="11"
-                  style="animation-delay:2.8s"></circle>
-                <circle cx="68" cy="356" fill="#E8882E" r="4.5"></circle>
-                <text fill="rgba(255,255,255,0.75)" font-family="Montserrat,sans-serif" font-size="8.5"
-                  font-weight="700" x="74" y="354">Patagonia</text>
-              </g>
-            </svg>
-            <div class="map-tip" id="mapTip">
-              <span class="map-tip-name" id="mapTipName"></span>
-              <a class="map-tip-link" href="#" id="mapTipLink" rel="noopener" target="_blank">Ver en Google Maps →</a>
-            </div>
-          </div>
-          <div class="map-locations">
-            <div class="map-loc"><span class="map-dot"></span>Buenos Aires</div>
-            <div class="map-loc"><span class="map-dot"></span>Rosario</div>
-            <div class="map-loc"><span class="map-dot"></span>Mendoza</div>
-            <div class="map-loc"><span class="map-dot"></span>La Pampa</div>
-            <div class="map-loc"><span class="map-dot"></span>Patagonia</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <script>
-    (function () {
-      var track = document.getElementById('trustTrack');
-      var vp = document.getElementById('trustViewport');
-      var prev = document.getElementById('trustPrev');
-      var next = document.getElementById('trustNext');
-      if (!track) return;
-      var items = track.children;
-      var current = 0;
-
-      function getVisible() {
-        if (window.innerWidth < 480) return 3;
-        if (window.innerWidth < 768) return 5;
-        return 8;
-      }
-
-      function itemW() { return vp.clientWidth / getVisible(); }
-
-      function resize() {
-        var w = itemW();
-        for (var i = 0; i < items.length; i++) {
-          items[i].style.width = w + 'px';
-          items[i].style.flex = '0 0 ' + w + 'px';
-        }
-        update();
-      }
-
-      function update() {
-        var vis = getVisible();
-        var max = items.length - vis;
-        if (current < 0) current = 0;
-        if (current > max) current = max;
-        track.style.transform = 'translateX(-' + (current * itemW()) + 'px)';
-        prev.disabled = current === 0;
-        next.disabled = current >= max;
-      }
-
-      prev.addEventListener('click', function () { current--; update(); });
-      next.addEventListener('click', function () { current++; update(); });
-
-      var resizeTimer;
-      window.addEventListener('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(resize, 80);
-      });
-
-      resize();
-    })();
-
-    // Parallax Effect
-    window.addEventListener('scroll', function () {
-      var scrolled = window.pageYOffset;
-      var heroBg = document.getElementById('heroBg');
-      if (heroBg) {
-        heroBg.style.transform = 'scale(1.1) translateY(' + (scrolled * 0.15) + 'px)';
-      }
-    });
-  </script>
-  <script>
-    // ── Formulario de contacto via Google Apps Script ──────────────────────────
-    var CF_WORKER = 'https://energe-leads.marketing-10f.workers.dev/';
-
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      var form = this;
-      var btn = document.getElementById('cfSubmit');
-      var errBox = document.getElementById('cfError');
-      var success = document.getElementById('cfSuccess');
-
-      btn.disabled = true;
-      btn.textContent = 'Enviando…';
-      errBox.style.display = 'none';
-
-      var params = new URLSearchParams({
-        nombre: document.getElementById('cf-name').value,
-        email: document.getElementById('cf-email').value,
-        telefono: document.getElementById('cf-tel').value,
-        provincia: document.getElementById('cf-prov').value,
-        ciudad: document.getElementById('cf-city').value,
-        mensaje: document.getElementById('cf-msg').value,
-        origen: 'Formulario de contacto (ES)'
-      });
-
-      fetch(CF_WORKER, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString()
-      })
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          if (data.ok) {
-            form.style.display = 'none';
-            success.style.display = 'flex';
-            if (typeof gtag === 'function') {
-              gtag('event', 'generate_lead', {
-                'event_category': 'engagement',
-                'event_label': 'Contact Form ES'
-              });
-            }
-          } else {
-            throw new Error(data.error || 'Error');
-          }
-        })
-        .catch(function () {
-          btn.disabled = false;
-          btn.textContent = 'Enviar consulta →';
-          errBox.style.display = 'block';
-        });
-    });
-  </script>
-  <!-- FAQ SEO SECTION -->
 
 <!-- FOOTER -->
-  <footer>
+    <footer>
     <div class="ft-main">
       <div class="ft-col ft-brand">
-        <div class="ft-logo"><img alt="Energe" src="images/logos/logo-energe-footer.png" /></div>
+        <div class="ft-logo"><img alt="Energe" src="images/logos/logo-energe-footer.png" width="120" height="32" /></div>
         <p class="ft-desc"><strong>Somos</strong> una empresa dedicada al desarrollo de soluciones de energía solar
           térmica y fotovoltaica. Desde 2007, impulsamos el ahorro energético y el cuidado del ambiente.</p>
       </div>
@@ -1323,7 +1069,7 @@
         <div class="ft-col-title">Contacto</div>
         <ul class="ft-contact-list">
           <li>
-            <svg class="ft-icon" fill="currentColor" viewbox="0 0 24 24">
+            <svg class="ft-icon" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z">
               </path>
@@ -1334,18 +1080,18 @@
             <span>261 242 4493</span>
           </li>
           <li>
-            <svg class="ft-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+            <svg class="ft-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
             <span>contacto@energe.com.ar</span>
           </li>
           <li>
-            <svg class="ft-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+            <svg class="ft-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
-            <a href="https://www.google.com/maps/dir/-32.9449472,-68.7767552/Energe+Mendoza,+Galpon+Interno,+Alsina+2550,+M5511+Maip%C3%BA,+Mendoza/@-32.9433071,-68.7861379,16z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x967e0c3f7917f36f:0xbcb6b78f61739d39!2m2!1d-68.7855175!2d-32.9415981?entry=ttu&amp;g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D"
+            <a href="https://www.google.com/maps/dir/-32.9449472,-68.7767552/Energe+Mendoza,+Galpon+Interno,+Alsina+2550,+M5511+Maip%C3%BA,+Mendoza/@-32.9433071,-68.7861379,16z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x967e0c3f7917f36f:0xbcb6b78f61739d39!2m2!1d-68.7855175!2d-32.9415981?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D"
               rel="noopener" style="color:inherit;text-decoration:none;" target="_blank">Alsina 2550, Maipú, Mendoza</a>
           </li>
         </ul>
@@ -1357,9 +1103,10 @@
           <li><a href="energia-solar-argentina.html">Energía Solar Argentina</a></li>
           <li><a href="soluciones-ongrid.html">Solar On-Grid</a></li>
           <li><a href="soluciones-offgrid-backup.html">Off-Grid / Backup</a></li>
-          <li><a href="#obras">Obras realizadas</a></li>
+          <li><a href="./#obras">Obras realizadas</a></li>
           <li><a href="blog.html">Blog</a></li>
-      <li><a href="preguntas-frecuentes.html">FAQ</a></li>
+          <li><a href="preguntas-frecuentes.html">FAQ</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
           <li><a href="cotizador-solar.html">Cotizador</a></li>
           <li><a href="postventa.html">Servicio Postventa</a></li>
         </ul>
@@ -1368,25 +1115,25 @@
         <div class="ft-col-title">Redes sociales</div>
         <ul class="ft-social-list">
           <li><a href="https://www.facebook.com/energe.energiarenovable" rel="noopener" target="_blank"><svg
-                class="ft-icon" fill="currentColor" viewbox="0 0 24 24">
+                class="ft-icon" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
                 </path>
               </svg><span>energe.energiarenovable</span></a></li>
           <li><a href="https://www.instagram.com/energe.ar" rel="noopener" target="_blank"><svg class="ft-icon"
-                fill="currentColor" viewbox="0 0 24 24">
+                fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z">
                 </path>
               </svg><span>@energe.ar</span></a></li>
           <li><a href="https://www.linkedin.com/company/energe" rel="noopener" target="_blank"><svg class="ft-icon"
-                fill="currentColor" viewbox="0 0 24 24">
+                fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
                 </path>
               </svg><span>energe</span></a></li>
           <li><a href="https://www.youtube.com/@energe_sa" rel="noopener" target="_blank"><svg class="ft-icon"
-                fill="currentColor" viewbox="0 0 24 24">
+                fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z">
                 </path>
