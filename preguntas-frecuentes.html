@@ -42,6 +42,87 @@
   <link href="style.css?v=1.01" rel="stylesheet" />
   <link href="chatbot.css" rel="stylesheet" />
 
+  <style>
+    .solar-ar-promo-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f9fbfd 100%);
+      border: 1px solid rgba(212, 114, 26, 0.15);
+      border-left: 5px solid #d4721a;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 40px 0 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      transition: all 0.3s ease;
+    }
+    .solar-ar-promo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(212, 114, 26, 0.08);
+      border-color: rgba(212, 114, 26, 0.3);
+    }
+    .promo-card-left {
+      flex: 1;
+    }
+    .promo-card-tag {
+      display: inline-block;
+      background: rgba(212, 114, 26, 0.08);
+      color: #d4721a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 12px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+    .promo-card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1a2530;
+      margin: 0 0 8px 0;
+      line-height: 1.3;
+    }
+    .promo-card-desc {
+      font-size: 0.95rem;
+      color: #5a6675;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .promo-card-btn {
+      display: inline-block;
+      background: #d4721a;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(212, 114, 26, 0.15);
+    }
+    .promo-card-btn:hover {
+      background: #c36213;
+      transform: translateX(4px);
+      box-shadow: 0 6px 20px rgba(212, 114, 26, 0.25);
+    }
+    @media (max-width: 768px) {
+      .solar-ar-promo-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px;
+        margin: 30px 0 10px 0;
+      }
+      .promo-card-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,7 +170,6 @@
         <ul class="nav-dropdown-menu">
           <li><a href="soluciones-ongrid.html">☀️ Solar On-Grid</a></li>
           <li><a href="soluciones-offgrid-backup.html"><svg viewBox="0 0 24 24" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:currentColor;fill:none;stroke-width:2.5"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Off-Grid / Backup Industrial</a></li>
-          <li><a href="energia-solar-argentina.html">🇦🇷 Energía Solar Argentina</a></li>
         </ul>
       </li>
       <li><a href="#obras">Obras realizadas</a></li>
@@ -157,6 +237,15 @@
               <p>Energe instala <strong>paneles solares en toda Argentina</strong> con presencia en Mendoza, Buenos Aires, Córdoba, San Juan, Santa Fe, Rosario y Neuquén, entre otras provincias. Con más de 19 años de trayectoria y +7.500 obras realizadas, somos el referente nacional en <strong>energía solar industrial</strong>.</p>
             </div>
           </details>
+        </div>
+
+        <div class="solar-ar-promo-card">
+          <div class="promo-card-left">
+            <span class="promo-card-tag">🇦🇷 INFORME ESPECIAL</span>
+            <h3 class="promo-card-title">Guía de Energía Solar en Argentina</h3>
+            <p class="promo-card-desc">Conocé el potencial solar del país, el marco regulatorio por provincia y cómo las industrias líderes están logrando la independencia energética.</p>
+          </div>
+          <a href="energia-solar-argentina.html" class="promo-card-btn">Explorar Guía →</a>
         </div>
       </section>
 
