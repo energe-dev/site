@@ -236,7 +236,7 @@
 
     <div class="stats-bar">
       <div class="st">
-        <div class="st-num">+19 años</div>
+        <div class="st-num" id="dynamic-years">+19 AÑOS</div>
         <div class="st-lbl">de trayectoria</div>
       </div>
       <div class="st">
@@ -1147,6 +1147,18 @@
   </footer>
   <script src="script.js" defer></script>
   <script>
+    // Dynamic trajectory calculation (since June 14, 2007)
+    (function () {
+      var element = document.getElementById('dynamic-years');
+      if (!element) return;
+      var startDate = new Date('2007-06-14T00:00:00');
+      var diffMs = Date.now() - startDate.getTime();
+      var diffYears = diffMs / (1000 * 60 * 60 * 24 * 365.25);
+      var years = Math.floor(diffYears);
+      var isEn = document.documentElement.lang === 'en' || window.location.pathname.includes('/en/');
+      element.textContent = '+' + years + (isEn ? ' YRS' : ' AÑOS');
+    })();
+
     (function () {
       var btn = document.getElementById('navToggle');
       var nav = document.getElementById('navLinks');
