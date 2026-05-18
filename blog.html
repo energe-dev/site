@@ -111,6 +111,27 @@
     Industria &amp; Off-Grid
    </button>
 </div>
+<!-- BUSCADOR Y FILTROS DE FECHA -->
+<div class="blog-controls-panel">
+  <div class="blog-search-box">
+    <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input type="text" id="blogSearch" placeholder="Buscar publicaciones por título, categoría o contenido..." />
+  </div>
+  <div class="blog-filter-box">
+    <select id="blogDateFilter" class="blog-select">
+      <option value="all">📅 Buscar por fecha...</option>
+      <option value="2026">2026</option>
+      <option value="2025">2025</option>
+      <option value="2024">2024</option>
+      <option value="2023">2023</option>
+      <option value="2020-before">2020 y anteriores</option>
+    </select>
+  </div>
+</div>
+
 <!-- ARTÍCULOS -->
 <div class="blog-index-wrap">
 <div class="blog-index-grid" id="blogGrid">
@@ -513,26 +534,105 @@
   </footer>
 <script>
    (function(){
+  // Mobile Nav Toggle
   var btn = document.getElementById('navToggle');
   var nav = document.getElementById('navLinks');
-  btn.addEventListener('click', function(){
-    var open = nav.classList.toggle('nav-open');
-    btn.classList.toggle('is-open', open);
-  });
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ nav.classList.remove('nav-open'); btn.classList.remove('is-open'); });
-  });
-  // Category filter
-  document.querySelectorAll('.blog-cat-btn').forEach(function(b){
+  if (btn && nav) {
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('nav-open');
+      btn.classList.toggle('is-open', open);
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ nav.classList.remove('nav-open'); btn.classList.remove('is-open'); });
+    });
+  }
+
+  // Unified Blog Filtering
+  var activeCategory = 'all';
+  var searchQuery = '';
+  var activeDateFilter = 'all';
+
+  var searchInput = document.getElementById('blogSearch');
+  var dateSelect = document.getElementById('blogDateFilter');
+  var catButtons = document.querySelectorAll('.blog-cat-btn');
+  var cards = document.querySelectorAll('#blogGrid .bcard');
+
+  function applyFilters() {
+    cards.forEach(function(card) {
+      // Category Match
+      var cardCat = card.dataset.cat || '';
+      var matchesCat = (activeCategory === 'all' || cardCat === activeCategory);
+
+      // Search Match
+      var titleText = card.querySelector('.bcard-title') ? card.querySelector('.bcard-title').textContent.toLowerCase() : '';
+      var excerptText = card.querySelector('.bcard-excerpt') ? card.querySelector('.bcard-excerpt').textContent.toLowerCase() : '';
+      var catLabel = card.querySelector('.bcard-cat') ? card.querySelector('.bcard-cat').textContent.toLowerCase() : '';
+      var matchesSearch = searchQuery === '' || 
+                          titleText.includes(searchQuery) || 
+                          excerptText.includes(searchQuery) || 
+                          catLabel.includes(searchQuery);
+
+      // Date Match
+      var dateText = card.querySelector('.bcard-date') ? card.querySelector('.bcard-date').textContent.toLowerCase() : '';
+      var matchesDate = true;
+      if (activeDateFilter !== 'all') {
+        var year = '';
+        var matches = dateText.match(/\b(2019|2020|2023|2024|2025|2026)\b/);
+        if (matches) {
+          year = matches[1];
+        }
+        if (activeDateFilter === '2020-before') {
+          matchesDate = (year === '2020' || year === '2019' || year === '');
+        } else {
+          matchesDate = (year === activeDateFilter);
+        }
+      }
+
+      // Show/Hide
+      if (matchesCat && matchesSearch && matchesDate) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Category event listeners
+  catButtons.forEach(function(b){
     b.addEventListener('click', function(){
-      document.querySelectorAll('.blog-cat-btn').forEach(function(x){ x.classList.remove('active'); });
+      catButtons.forEach(function(x){ x.classList.remove('active'); });
       b.classList.add('active');
-      var cat = b.dataset.cat;
-      document.querySelectorAll('#blogGrid .bcard').forEach(function(card){
-        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
-      });
+      activeCategory = b.dataset.cat;
+      applyFilters();
     });
   });
+
+  // Search event listener
+  if (searchInput) {
+    searchInput.addEventListener('input', function(){
+      searchQuery = searchInput.value.toLowerCase().trim();
+      applyFilters();
+    });
+  }
+
+  // Date filter event listener
+  if (dateSelect) {
+    if (dateSelect.value === 'all') {
+      dateSelect.style.color = 'var(--text-muted)';
+    } else {
+      dateSelect.style.color = 'var(--text)';
+    }
+
+    dateSelect.addEventListener('change', function(){
+      activeDateFilter = dateSelect.value;
+      if (dateSelect.value === 'all') {
+        dateSelect.style.color = 'var(--text-muted)';
+      } else {
+        dateSelect.style.color = 'var(--text)';
+      }
+      applyFilters();
+    });
+  }
 })();
   </script>
 <script src="chatbot.js"></script></body>

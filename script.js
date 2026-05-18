@@ -8,5 +8,13 @@ slider.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();sli
 let touchX;
 slider.addEventListener('touchstart',e=>{touchX=e.touches[0].pageX;scrollLeft=slider.scrollLeft},{passive:true});
 slider.addEventListener('touchmove',e=>{if(touchX===undefined)return;slider.scrollLeft=scrollLeft-(e.touches[0].pageX-touchX)*1.2},{passive:true});
-document.getElementById('sp').addEventListener('click',()=>slider.scrollBy({left:-420,behavior:'smooth'}));
-document.getElementById('sn').addEventListener('click',()=>slider.scrollBy({left:420,behavior:'smooth'}));
+function getScrollAmount() {
+  const card = slider.querySelector('.pc');
+  if (!card) return 350;
+  const style = window.getComputedStyle(slider);
+  const gap = parseFloat(style.gap) || 20;
+  return card.clientWidth + gap;
+}
+
+document.getElementById('sp').addEventListener('click',()=>slider.scrollBy({left:-getScrollAmount(),behavior:'smooth'}));
+document.getElementById('sn').addEventListener('click',()=>slider.scrollBy({left:getScrollAmount(),behavior:'smooth'}));

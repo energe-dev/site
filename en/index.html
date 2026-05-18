@@ -190,7 +190,7 @@
   </div>
   <div class="slider" id="slider">
 
-    <div class="pc feat-card">
+    <div class="pc">
       <div class="pc-img"><img src="../images/obras/parque-santa-rosa.jpg" alt="Santa Rosa Solar Park" loading="lazy" /></div>
       <div class="pc-overlay"></div>
       <div class="pc-badge">⭐ Featured Project</div>
@@ -607,8 +607,15 @@ var CF_WORKER = 'https://energe-leads.marketing-10f.workers.dev/';
 (function(){
   var s=document.getElementById('slider'),prev=document.getElementById('sp'),next=document.getElementById('sn');
   if(!s) return;
-  next.addEventListener('click',function(){ s.scrollBy({left:360,behavior:'smooth'}); });
-  prev.addEventListener('click',function(){ s.scrollBy({left:-360,behavior:'smooth'}); });
+  function getScrollAmount() {
+    var card = s.querySelector('.pc');
+    if (!card) return 350;
+    var style = window.getComputedStyle(s);
+    var gap = parseFloat(style.gap) || 20;
+    return card.clientWidth + gap;
+  }
+  next.addEventListener('click',function(){ s.scrollBy({left:getScrollAmount(),behavior:'smooth'}); });
+  prev.addEventListener('click',function(){ s.scrollBy({left:-getScrollAmount(),behavior:'smooth'}); });
   var isDragging=false,startX,scrollLeft;
   s.addEventListener('mousedown',function(e){ isDragging=true; startX=e.pageX-s.offsetLeft; scrollLeft=s.scrollLeft; });
   s.addEventListener('mouseleave',function(){ isDragging=false; });
