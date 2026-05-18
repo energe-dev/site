@@ -741,15 +741,14 @@ body>nav {
 }
 
 .val-img {
-  width: 100%;
-  flex: 1;
-  height: auto;
-  min-height: 320px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 14px;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 16px 52px var(--shadow);
-  position: relative;
-  margin-bottom: 14px;
 }
 
 .val-img img {
@@ -4437,6 +4436,7 @@ footer::before {
   }
 
   .val-img {
+    position: static;
     height: 320px;
     flex: none
   }
@@ -4738,6 +4738,7 @@ footer::before {
   }
 
   .val-img {
+    position: static;
     height: 220px;
     flex: none
   }
