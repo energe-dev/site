@@ -986,7 +986,13 @@
           <div class="section-tag">Blog</div>
           <h2 class="section-title">Todo lo que necesitás saber sobre<br /><em>energía solar en Argentina</em></h2>
         </div>
-        <a class="btn-orange-outline" href="blog.html">Ver todas las publicaciones →</a>
+        <div class="blog-head-actions">
+          <a class="btn-orange-outline" href="blog.html">Ver todas las publicaciones →</a>
+          <div class="slider-btns blog-slider-btns">
+            <button class="sbtn" id="bp">←</button>
+            <button class="sbtn act" id="bn">→</button>
+          </div>
+        </div>
       </div>
       <div class="blog-grid">
         <a class="bcard" href="blog-rimi-2026-energia-solar-pymes.html">
@@ -1176,7 +1182,12 @@
   </script>
   <script>
     (function () {
-      var VISIBLE = 7;
+      function getVisibleCount() {
+        if (window.innerWidth <= 480) return 2;
+        if (window.innerWidth <= 768) return 3;
+        if (window.innerWidth <= 1024) return 5;
+        return 7;
+      }
       var track = document.getElementById('trustTrack');
       var vp = document.getElementById('trustViewport');
       var prev = document.getElementById('trustPrev');
@@ -1185,7 +1196,7 @@
       var items = track.children;
       var current = 0;
 
-      function itemW() { return vp.clientWidth / VISIBLE; }
+      function itemW() { return vp.clientWidth / getVisibleCount(); }
 
       function resize() {
         var w = itemW();
@@ -1193,7 +1204,7 @@
       }
 
       function update() {
-        var max = items.length - VISIBLE;
+        var max = items.length - getVisibleCount();
         if (current < 0) current = 0;
         if (current > max) current = max;
         track.style.transform = 'translateX(-' + (current * itemW()) + 'px)';

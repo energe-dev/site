@@ -456,7 +456,13 @@
         <div class="section-tag">Blog</div>
         <h2 class="section-title">Everything you need to know about<br><em>solar energy in Argentina</em></h2>
       </div>
-      <a href="blog.html" class="btn-orange-outline">View All Articles →</a>
+      <div class="blog-head-actions">
+        <a href="blog.html" class="btn-orange-outline">View All Articles →</a>
+        <div class="slider-btns blog-slider-btns">
+          <button class="sbtn" id="bp">←</button>
+          <button class="sbtn act" id="bn">→</button>
+        </div>
+      </div>
     </div>
     <div class="blog-grid">
 
@@ -545,7 +551,12 @@
 
 <script>
 (function(){
-  var VISIBLE = 7;
+  function getVisibleCount() {
+    if (window.innerWidth <= 480) return 2;
+    if (window.innerWidth <= 768) return 3;
+    if (window.innerWidth <= 1024) return 5;
+    return 7;
+  }
   var track   = document.getElementById('trustTrack');
   var vp      = document.getElementById('trustViewport');
   var prev    = document.getElementById('trustPrev');
@@ -554,7 +565,7 @@
   var items   = track.children;
   var current = 0;
 
-  function itemW(){ return vp.clientWidth / VISIBLE; }
+  function itemW(){ return vp.clientWidth / getVisibleCount(); }
 
   function resize(){
     var w = itemW();
@@ -562,7 +573,7 @@
   }
 
   function update(){
-    var max = items.length - VISIBLE;
+    var max = items.length - getVisibleCount();
     if(current < 0) current = 0;
     if(current > max) current = max;
     track.style.transform = 'translateX(-' + (current * itemW()) + 'px)';

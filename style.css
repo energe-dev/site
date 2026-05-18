@@ -2597,6 +2597,26 @@ footer::before {
   align-items: center
 }
 
+/* Solutions Hero Buttons equal width stretch */
+.sol-hero .hero-actions {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.sol-hero .hero-actions .btn-p,
+.sol-hero .hero-actions .btn-ghost {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
 .sol-breadcrumb {
   font-size: 9.5px;
   font-weight: 700;
@@ -2704,17 +2724,48 @@ footer::before {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 72px;
-  align-items: start
+  align-items: stretch;
+}
+
+.sol-grid-2 > div:nth-child(2) {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
 }
 
 .sol-body-image {
   width: 100%;
-  height: 340px;
+  flex-grow: 1 !important;
+  height: 0 !important;
+  min-height: 240px;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 16px 52px var(--shadow);
-  position: sticky;
-  top: 110px
+  margin-bottom: 14px !important;
+}
+
+.sol-body-image img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  margin-top: 14px;
+}
+
+.feat-svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--orange);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 .sol-body-image img {
@@ -2811,9 +2862,19 @@ footer::before {
 }
 
 .sol-app-ico {
-  font-size: 28px;
   margin-bottom: 12px;
-  display: block
+  display: block;
+  height: 28px;
+}
+
+.sol-app-ico svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--orange);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 .sol-app-name {
@@ -2950,7 +3011,8 @@ footer::before {
 
   .sol-body-image {
     position: static;
-    height: 280px
+    flex-grow: 0 !important;
+    height: 280px !important
   }
 
   .sol-apps-section {
@@ -2991,6 +3053,21 @@ footer::before {
     grid-template-columns: repeat(3, 1fr)
   }
 
+  .sol-hero .hero-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .sol-hero .hero-actions .btn-p,
+  .sol-hero .hero-actions .btn-ghost {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
   .sol-body {
     padding: 56px 20px
   }
@@ -3016,7 +3093,7 @@ footer::before {
   }
 
   .backup-banner {
-    padding: 56px 20px
+    padding: 56px 0
   }
 
   .backup-banner-inner {
@@ -3233,6 +3310,16 @@ footer::before {
   margin-bottom: 52px;
   gap: 24px;
   flex-wrap: wrap
+}
+
+.blog-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.blog-slider-btns {
+  display: none !important;
 }
 
 .blog-grid {
@@ -3563,8 +3650,10 @@ footer::before {
     max-width: 100%;
   }
 
-  .blog-filter-box {
-    justify-content: space-between;
+  .blog-filter-box,
+  .blog-select {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -4718,7 +4807,7 @@ footer::before {
   }
 
   .faq-page-main {
-    padding: 0 20px !important;
+    padding: 0 !important;
   }
 
   .val-layout {
@@ -4817,6 +4906,7 @@ footer::before {
 
   /* CTA */
   .cta-inner {
+    grid-template-columns: 1fr !important;
     padding: 0 20px
   }
 
@@ -4850,8 +4940,8 @@ footer::before {
   }
 
   .cta-contacts {
-    gap: 24px;
-    flex-wrap: wrap
+    flex-direction: column !important;
+    gap: 18px !important;
   }
 
   /* CONTACT */
@@ -4974,16 +5064,12 @@ footer::before {
 
   /* Blog mobile */
   .blog-preview-section {
-    padding: 56px 20px
+    padding: 56px 0
   }
 
   .blog-preview-head {
     flex-direction: column;
     align-items: flex-start
-  }
-
-  .blog-grid {
-    grid-template-columns: 1fr
   }
 
   .blog-hero {
@@ -5241,7 +5327,7 @@ footer::before {
 
   /* Blog preview section */
   .blog-preview-section {
-    padding: 56px 20px
+    padding: 56px 0
   }
 
   .blog-preview-head {
@@ -5250,8 +5336,43 @@ footer::before {
     gap: 16px
   }
 
+  .blog-head-actions {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex
+  }
+
+  .blog-slider-btns {
+    display: flex !important
+  }
+
   .blog-grid {
-    grid-template-columns: 1fr
+    display: flex !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 !important;
+    padding: 4px 0 16px;
+    gap: 14px !important;
+    width: auto !important;
+    scroll-snap-type: x mandatory
+  }
+
+  .blog-grid::-webkit-scrollbar {
+    display: none !important
+  }
+
+  .blog-grid:active {
+    cursor: grabbing
+  }
+
+  .blog-grid .bcard {
+    width: 100% !important;
+    min-width: 100% !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: center
   }
 }
 
@@ -5264,10 +5385,6 @@ footer::before {
     font-size: 7.5px;
     letter-spacing: 1px;
     padding: 5px 0
-  }
-
-  body>nav {
-    top: 0
   }
 }
 
