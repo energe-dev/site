@@ -9,7 +9,7 @@
 :root {
   --orange: #D4721A;
   --orange-hover: #B85E10;
-  --orange-light: #E8882E;
+  --orange-light: #D4721A;
   --orange-pale: #FDF0E6;
   --white: #FFFFFF;
   --off-white: #F8F5F1;
@@ -551,7 +551,7 @@ body>nav {
 
 .value-section .section-tag {
   color: var(--orange-light);
-  border-color: rgba(232, 136, 46, .3)
+  border-color: rgba(212, 114, 26, .3)
 }
 
 .value-section .section-title {
@@ -1022,7 +1022,7 @@ body>nav {
 
 .sectors-section .section-tag {
   color: var(--orange-light);
-  border-color: rgba(232, 136, 46, .3)
+  border-color: rgba(212, 114, 26, .3)
 }
 
 .sectors-section .section-title {
@@ -1054,7 +1054,7 @@ body>nav {
 }
 
 .sectors-section .sc-n {
-  color: rgba(232, 136, 46, .04)
+  color: rgba(212, 114, 26, .04)
 }
 
 .sectors-grid {
@@ -1223,7 +1223,7 @@ body>nav {
   display: block;
   width: 22px;
   height: 2px;
-  background: #E8882E;
+  background: #D4721A;
   border-radius: 1px
 }
 
@@ -1661,13 +1661,13 @@ footer::before {
 }
 
 .cot-card:hover {
-  border-color: rgba(232, 136, 46, .5);
-  background: rgba(232, 136, 46, .04)
+  border-color: rgba(212, 114, 26, .5);
+  background: rgba(212, 114, 26, .04)
 }
 
 .cot-card.selected {
   border-color: var(--orange);
-  background: rgba(232, 136, 46, .08)
+  background: rgba(212, 114, 26, .08)
 }
 
 .cot-card-ico {
@@ -2256,7 +2256,7 @@ footer::before {
   border-radius: 50%;
   background: var(--orange-light);
   flex-shrink: 0;
-  box-shadow: 0 0 6px rgba(232, 136, 46, .6)
+  box-shadow: 0 0 6px rgba(212, 114, 26, .6)
 }
 
 .pin-group {
@@ -2272,7 +2272,7 @@ footer::before {
   display: none;
   position: absolute;
   background: #fff;
-  border-left: 3px solid #E8882E;
+  border-left: 3px solid #D4721A;
   border-radius: 6px;
   padding: 9px 15px 9px 13px;
   box-shadow: 0 6px 28px rgba(0, 0, 0, .28);
@@ -2621,8 +2621,8 @@ footer::before {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--orange-light);
-  background: rgba(232, 136, 46, .1);
-  border: 1px dashed rgba(232, 136, 46, .3);
+  background: rgba(212, 114, 26, .1);
+  border: 1px dashed rgba(212, 114, 26, .3);
   padding: 5px 12px;
   border-radius: 2px;
   display: inline-block;
@@ -2849,7 +2849,7 @@ footer::before {
 .sol-step-num {
   font-size: 44px;
   font-weight: 900;
-  color: rgba(232, 136, 46, .18);
+  color: rgba(212, 114, 26, .18);
   letter-spacing: -2px;
   line-height: 1
 }
@@ -5509,7 +5509,7 @@ footer::before {
 }
 
 .faq-answer a:hover {
-  color: #e8882e;
+  color: #d4721a;
 }
 
 @media (max-width: 768px) {
