@@ -1513,7 +1513,7 @@ footer::before {
   gap: 16px;
   margin-top: 36px;
   padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, .08)
+  border-top: 1px solid var(--border)
 }
 
 .cot-stat-num {
@@ -1525,7 +1525,7 @@ footer::before {
 
 .cot-stat-lbl {
   font-size: 10px;
-  color: rgba(255, 255, 255, .4);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 3px
