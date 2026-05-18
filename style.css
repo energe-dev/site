@@ -1299,6 +1299,15 @@ body>nav {
   color: var(--orange-light)
 }
 
+.btn-ghost-orange {
+  border-color: var(--orange);
+  color: var(--orange-light)
+}
+
+.btn-ghost-orange:hover {
+  background: rgba(212, 114, 26, .08)
+}
+
 .cta-contacts {
   margin-top: 48px;
   display: flex;
@@ -2551,7 +2560,7 @@ footer::before {
 .backup-stat-lbl {
   font-size: 8px;
   font-weight: 600;
-  color: rgba(255, 255, 255, .45);
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1px
 }
@@ -2594,7 +2603,7 @@ footer::before {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, .35);
+  color: #ffffff;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -2602,7 +2611,7 @@ footer::before {
 }
 
 .sol-breadcrumb a {
-  color: rgba(255, 255, 255, .35);
+  color: #ffffff;
   text-decoration: none;
   transition: color .2s
 }
@@ -2612,7 +2621,7 @@ footer::before {
 }
 
 .sol-breadcrumb span {
-  color: rgba(255, 255, 255, .2)
+  color: rgba(255, 255, 255, .6)
 }
 
 .sol-hero-tag {
@@ -2648,7 +2657,7 @@ footer::before {
 .sol-hero-sub {
   font-size: 14.5px;
   line-height: 1.85;
-  color: rgba(255, 255, 255, .55);
+  color: #ffffff;
   margin-bottom: 36px;
   padding-left: 16px;
   border-left: 3px solid var(--orange)
@@ -2681,7 +2690,7 @@ footer::before {
 .sol-hero-stat-lbl {
   font-size: 9px;
   font-weight: 600;
-  color: rgba(255, 255, 255, .35);
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.4
@@ -3583,7 +3592,7 @@ footer::before {
 .article-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, .3) 0%, rgba(10, 5, 0, .85) 100%)
+  background: linear-gradient(180deg, rgba(0, 0, 0, .82) 0%, rgba(0, 0, 0, .98) 100%)
 }
 
 .article-hero-content {
