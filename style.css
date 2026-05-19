@@ -3705,6 +3705,14 @@ footer::before {
   padding: 40px 96px
 }
 
+@media (min-width: 769px) {
+  .article-hero-content {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+  }
+}
+
 .article-breadcrumb {
   font-size: 10px;
   font-weight: 700;
