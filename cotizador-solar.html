@@ -224,6 +224,14 @@
             <label class="cot-label">Ciudad</label>
             <input class="cot-input" type="text" id="ciudad" placeholder="Ej: Mendoza"/>
           </div>
+          <div class="cot-field-group">
+            <label class="cot-label">Adjuntar factura (opcional)</label>
+            <div class="file-upload-wrapper">
+              <input type="file" id="factura" accept=".pdf,.jpg,.jpeg,.png" style="display: none;" onchange="handleFileSelect(this)"/>
+              <button type="button" class="cot-input file-upload-btn" onclick="document.getElementById('factura').click()">Seleccionar archivo...</button>
+              <span class="file-name-label" id="fileNameLabel" style="font-size:11px; color:var(--text-soft); margin-top:4px; display:block;">Ningún archivo seleccionado</span>
+            </div>
+          </div>
           <div class="cot-field-group" style="grid-column:1/-1">
             <label class="cot-label">Comentario adicional (opcional)</label>
             <textarea class="cot-input cot-textarea" id="comentario" placeholder="Contanos más sobre tu instalación, si tenés medidor bidireccional, grupo electrógeno, etc."></textarea>
@@ -314,7 +322,7 @@
           <li><a href="preguntas-frecuentes.html">FAQ</a></li>
           <li><a href="contacto.html">Contacto</a></li>
           
-          <li><a href="postventa.html">Servicio Postventa</a></li>
+          <li><a href="soporte.html">Servicio Postventa</a></li>
         </ul>
       </div>
       <div class="ft-col">
@@ -427,6 +435,8 @@ function buildSummary() {
     ['Empresa',             formData.empresa],
     ['Email',               formData.email],
     ['Teléfono',            formData.telefono],
+    ...(formData.ciudad ? [['Ciudad', formData.ciudad]] : []),
+    ...(fileName ? [['Factura adjunta', fileName]] : []),
     ...(formData.comentario ? [['Comentario', formData.comentario]] : [])
   ];
   document.getElementById('cotSummary').innerHTML = rows.map(([k,v]) =>
@@ -434,47 +444,145 @@ function buildSummary() {
   ).join('');
 }
 
-var CF_WORKER = 'https://energe-leads.marketing-10f.workers.dev/';
+var CF_WORKER = 'https://script.google.com/macros/s/AKfycbyHIw2ZV77oJZGyCZz0zeBPIKFZfQ3mh0U4-CBUwa-kJEP3j4oNt_zI4Vf0RAJ_vDtpwA/exec';
 function submitForm() {
   var btn = document.getElementById('submitBtn');
   if(btn){ btn.disabled=true; btn.textContent='Enviando…'; }
   var params = new URLSearchParams({
-    nombre:    formData.nombre,
-    email:     formData.email,
-    telefono:  formData.telefono,
-    provincia: formData.provincia,
-    ciudad:    formData.ciudad,
-    empresa:   formData.empresa,
-    consumo:   formData.consumo,
-    tipo:      formData.tipo,
-    mensaje:   formData.comentario || '',
-    origen:    'Cotizador solar (ES)'
+    nombre:        formData.nombre,
+    email:         formData.email,
+    telefono:      formData.telefono,
+    provincia:     formData.provincia,
+    ciudad:        formData.ciudad,
+    empresa:       formData.empresa,
+    consumo:       formData.consumo,
+    tipo:          formData.tipo,
+    mensaje:       formData.comentario || '',
+    archivoData:   fileBase64 || '',
+    archivoNombre: fileName || '',
+    origen:        'Cotizador solar (ES)'
   });
-  fetch(CF_WORKER, {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:params.toString()})
-    .then(function(r){ return r.json(); })
-    .then(function(data){
-      if(data.ok){ 
-        goToStep(5); 
-        if(typeof gtag === 'function') {
-          gtag('event', 'generate_lead', {
-            'event_category': 'engagement',
-            'event_label': 'Cotizador Solar ES'
-          });
-        }
-      }
-      else{ throw new Error(data.error||'Error'); }
-    })
-    .catch(function(){
-      if(btn){ btn.disabled=false; btn.textContent='<svg viewBox="0 0 24 24" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:currentColor;fill:none;stroke-width:2.5"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Enviar diagnóstico'; }
-      alert('No se pudo enviar. Intentá de nuevo o escribinos a contacto@energe.com.ar');
-    });
+  showToast('Enviando cotización y adjuntos... Por favor, no cierres esta pestaña.', 0);
+  fetch(CF_WORKER, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: params.toString()
+  })
+  .then(function(){
+    hideToast();
+    goToStep(5); 
+    if(typeof gtag === 'function') {
+      gtag('event', 'generate_lead', {
+        'event_category': 'engagement',
+        'event_label': 'Cotizador Solar ES'
+      });
+    }
+  })
+  .catch(function(){
+    hideToast();
+    if(btn){ btn.disabled=false; btn.innerHTML='<svg viewBox="0 0 24 24" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:currentColor;fill:none;stroke-width:2.5"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Enviar diagnóstico'; }
+    alert('No se pudo enviar. Intentá de nuevo o escribinos a contacto@energe.com.ar');
+  });
+}
+
+function showToast(message) {
+  var old = document.getElementById('cot-toast');
+  if (old) old.remove();
+  
+  var toast = document.createElement('div');
+  toast.id = 'cot-toast';
+  toast.style.position = 'fixed';
+  toast.style.bottom = '24px';
+  toast.style.right = '24px';
+  toast.style.backgroundColor = 'rgba(219, 107, 21, 0.95)';
+  toast.style.color = '#fff';
+  toast.style.padding = '16px 24px';
+  toast.style.borderRadius = '12px';
+  toast.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+  toast.style.zIndex = '999999';
+  toast.style.fontFamily = 'inherit';
+  toast.style.fontSize = '14px';
+  toast.style.display = 'flex';
+  toast.style.alignItems = 'center';
+  toast.style.gap = '12px';
+  toast.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+  toast.style.transform = 'translateY(100px)';
+  toast.style.opacity = '0';
+  toast.style.backdropFilter = 'blur(8px)';
+  
+  var spinner = '<svg class="cot-spin" viewBox="0 0 24 24" style="width:20px;height:20px;animation:cot-spin 1s linear infinite;fill:none;stroke:currentColor;stroke-width:3"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle><path d="M4 12a8 8 0 018-8"></path></svg>';
+  
+  if (!document.getElementById('cot-toast-style')) {
+    var style = document.createElement('style');
+    style.id = 'cot-toast-style';
+    style.textContent = '@keyframes cot-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
+    document.head.appendChild(style);
+  }
+  
+  toast.innerHTML = spinner + '<span style="font-weight: 500;">' + message + '</span>';
+  document.body.appendChild(toast);
+  
+  setTimeout(function() {
+    toast.style.transform = 'translateY(0)';
+    toast.style.opacity = '1';
+  }, 50);
+}
+
+function hideToast() {
+  var toast = document.getElementById('cot-toast');
+  if (toast) {
+    toast.style.transform = 'translateY(100px)';
+    toast.style.opacity = '0';
+    setTimeout(function() { toast.remove(); }, 400);
+  }
+}
+
+let fileBase64 = '';
+let fileName = '';
+
+function handleFileSelect(input) {
+  const file = input.files[0];
+  const label = document.getElementById('fileNameLabel');
+  if (file) {
+    if (file.size > 5 * 1024 * 1024) {
+      alert('El archivo supera el límite de 5MB. Por favor, selecciona un archivo más pequeño.');
+      input.value = '';
+      label.textContent = 'Ningún archivo seleccionado';
+      fileBase64 = '';
+      fileName = '';
+      return;
+    }
+    fileName = file.name;
+    label.textContent = file.name;
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const raw = e.target.result;
+      fileBase64 = raw.substring(raw.indexOf(',') + 1);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    label.textContent = 'Ningún archivo seleccionado';
+    fileBase64 = '';
+    fileName = '';
+  }
 }
 
 function resetForm() {
   Object.keys(formData).forEach(k => formData[k] = '');
   document.querySelectorAll('.cot-card').forEach(c => c.classList.remove('selected'));
   document.getElementById('provincia').value = '';
-  ['nombre','empresa','email','telefono','comentario'].forEach(id => document.getElementById(id).value = '');
+  ['nombre','empresa','email','telefono','ciudad','comentario'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  fileBase64 = '';
+  fileName = '';
+  const fileInput = document.getElementById('factura');
+  if (fileInput) fileInput.value = '';
+  const fileLabel = document.getElementById('fileNameLabel');
+  if (fileLabel) fileLabel.textContent = 'Ningún archivo seleccionado';
   ['next1','next2','next3'].forEach(id => document.getElementById(id).disabled = true);
   goToStep(1);
   return false;

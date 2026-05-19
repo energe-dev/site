@@ -218,7 +218,7 @@
     })();
 
     // Form Submission
-    var CF_WORKER = 'https://energe-leads.marketing-10f.workers.dev/';
+    var CF_WORKER = 'https://script.google.com/macros/s/AKfycbyHIw2ZV77oJZGyCZz0zeBPIKFZfQ3mh0U4-CBUwa-kJEP3j4oNt_zI4Vf0RAJ_vDtpwA/exec';
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
       var form = this, btn = document.getElementById('cfSubmit'), errBox = document.getElementById('cfError'), success = document.getElementById('cfSuccess');
@@ -232,21 +232,21 @@
         mensaje: document.getElementById('cf-msg').value,
         origen: 'Formulario de contacto (EN)'
       });
-      fetch(CF_WORKER, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: params.toString() })
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          if (data.ok) {
-            form.style.display = 'none';
-            success.style.display = 'flex';
-          } else {
-            throw new Error(data.error || 'Error');
-          }
-        })
-        .catch(function () {
-          btn.disabled = false;
-          btn.textContent = 'Send inquiry →';
-          errBox.style.display = 'block';
-        });
+      fetch(CF_WORKER, { 
+        method: 'POST', 
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
+        body: params.toString() 
+      })
+      .then(function () {
+        form.style.display = 'none';
+        success.style.display = 'flex';
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Send inquiry →';
+        errBox.style.display = 'block';
+      });
     });
 
     // Map Tooltip Logic

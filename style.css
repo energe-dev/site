@@ -1785,6 +1785,20 @@ footer::before {
   border-color: var(--orange)
 }
 
+.file-upload-btn {
+  text-align: left !important;
+  cursor: pointer;
+  background: var(--white);
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.file-upload-btn::after {
+  content: '📎';
+  font-size: 14px;
+}
+
 .cot-textarea {
   resize: vertical;
   min-height: 80px
