@@ -4609,7 +4609,7 @@ footer::before {
   /* Mockup bar */
   .mockup-bar {
     font-size: 8px;
-    letter-spacing: 1.5px
+    letter-spacing: 0.5px
   }
 
   /* NAV */
@@ -4688,13 +4688,19 @@ footer::before {
   /* HERO — column layout so float never overlaps buttons */
   .hero {
     min-height: 90vh;
+    display: flex;
     flex-direction: column;
-    align-items: stretch
+    align-items: stretch;
+    justify-content: space-between
   }
 
   .hero-content {
-    padding: 100px 20px 180px;
-    max-width: 100%
+    padding: 100px 20px 40px;
+    max-width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
   }
 
   .hero-vline {
@@ -4742,6 +4748,10 @@ footer::before {
   }
 
   .stats-bar {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -5000,10 +5010,14 @@ footer::before {
   }
 
   .hero-content {
-    padding-bottom: 280px
+    padding-bottom: 40px
   }
 
   .stats-bar {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
     grid-template-columns: 1fr;
     border-top: 4px solid var(--orange);
   }
@@ -5383,7 +5397,7 @@ footer::before {
 
   .mockup-bar {
     font-size: 7.5px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     padding: 5px 0
   }
 }
