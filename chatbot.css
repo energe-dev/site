@@ -1,6 +1,6 @@
 /* CHATBOT ENERGE - DESIGN SYSTEM */
 :root {
-  --chat-orange: #D4721A;
+  --chat-orange: #D47207;
   --chat-dark: #1A1208;
   --chat-bg: rgba(255, 255, 255, 0.98);
   --chat-shadow: 0 12px 48px rgba(90, 40, 0, 0.15);
@@ -75,13 +75,12 @@
 .bot-avatar {
   width: 36px;
   height: 36px;
-  background: rgba(255,255,255,0.2);
+  background: transparent;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 14px;
+  overflow: hidden;
 }
 
 .bot-info h3 {
@@ -152,6 +151,7 @@
   border-radius: 10px;
   font-size: 12px;
   font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
   transition: all 0.2s;
   text-align: left;

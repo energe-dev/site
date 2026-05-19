@@ -11,7 +11,7 @@ const EnergeBot = {
         nombre: '',
         email: '',
         telefono: '',
-        empresa: '',    
+        empresa: '',
         solucionTipo: '',
         provincia: '',
         objetivo: '',
@@ -27,7 +27,7 @@ const EnergeBot = {
         direccion: '',
         detalleProblema: ''
     },
-    
+
     init() {
         this.renderBase();
         this.addEventListeners();
@@ -35,6 +35,8 @@ const EnergeBot = {
     },
 
     renderBase() {
+        const isEn = window.location.pathname.includes('/en/');
+        const basePath = isEn ? '../' : '';
         const html = `
             <div id="energe-bot-container">
                 <div id="bot-launcher">
@@ -42,7 +44,9 @@ const EnergeBot = {
                 </div>
                 <div id="bot-window">
                     <div id="bot-header">
-                        <div class="bot-avatar">E</div>
+                        <div class="bot-avatar">
+                            <img src="${basePath}images/bot-logo.png" alt="Energe" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
                         <div class="bot-info">
                             <h3>Asistente Energe</h3>
                             <span>Atención en línea</span>
@@ -52,7 +56,7 @@ const EnergeBot = {
                         </div>
                     </div>
                     <div id="bot-messages">
-                        <div id="bot-typing" class="msg bot" style="display:none; padding: 10px 16px; width: 50px;">
+                        <div id="bot-typing" class="msg bot" style="display:none; justify-content: center; align-items: center; gap: 4px; width: 56px; height: 38px; padding: 12px 0;">
                             <span class="dot"></span><span class="dot"></span><span class="dot"></span>
                         </div>
                     </div>
@@ -63,7 +67,7 @@ const EnergeBot = {
                         </button>
                     </div>
                     <div id="bot-footer">
-                        <div class="bot-brand">✦ ENERGE ENERGY ✦</div>
+                        <div class="bot-brand">✦ ENERGE BOT ✦</div>
                     </div>
                 </div>
             </div>
@@ -77,7 +81,7 @@ const EnergeBot = {
         const closeBtn = document.getElementById('bot-close');
         const input = document.getElementById('bot-user-input');
         const sendBtn = document.getElementById('bot-send-btn');
-        
+
         launcher.addEventListener('click', () => {
             this.isOpen = !this.isOpen;
             botWindow.style.display = this.isOpen ? 'flex' : 'none';
@@ -111,7 +115,7 @@ const EnergeBot = {
         const typing = document.getElementById('bot-typing');
         const container = document.getElementById('bot-messages');
         container.appendChild(typing);
-        typing.style.display = 'block';
+        typing.style.display = 'flex';
         container.scrollTop = container.scrollHeight;
         setTimeout(() => { typing.style.display = 'none'; callback(); }, 1200);
     },
@@ -169,38 +173,38 @@ const EnergeBot = {
 
     showMap(zona) {
         const maps = {
-            mendoza: { 
-                name: 'Casa Matriz Mendoza', 
+            mendoza: {
+                name: 'Casa Matriz Mendoza',
                 address: 'Alsina 2550, M5511 Maipú, Mendoza',
                 phone: '261 242 4493',
-                link: 'https://maps.app.goo.gl/JUMUR9hxeS6NGvJN9' 
+                link: 'https://maps.app.goo.gl/JUMUR9hxeS6NGvJN9'
             },
-            buenosaires: { 
-                name: 'Energe Buenos Aires', 
+            buenosaires: {
+                name: 'Energe Buenos Aires',
                 address: 'Av. S. Martín 7188, C1425 Buenos Aires',
                 phone: '011 5817 8656',
-                link: 'https://maps.app.goo.gl/G2Z7UwAnyG6sYU5X8' 
+                link: 'https://maps.app.goo.gl/G2Z7UwAnyG6sYU5X8'
             },
-            lapampa: { 
-                name: 'Energe La Pampa', 
+            lapampa: {
+                name: 'Energe La Pampa',
                 address: 'Mansilla 602, L6300 Santa Rosa, La Pampa',
                 phone: '02954 680201',
-                link: 'https://maps.app.goo.gl/E7vnLnNhpBQyEvuZ7' 
+                link: 'https://maps.app.goo.gl/E7vnLnNhpBQyEvuZ7'
             },
-            patagonia: { 
-                name: 'Energe Patagonia', 
+            patagonia: {
+                name: 'Energe Patagonia',
                 address: 'Gral. Pacheco 280, R8324 Cipolletti, Río Negro',
                 phone: '0299 548 9858',
-                link: 'https://maps.app.goo.gl/zor9nZeypx11YCcH9' 
+                link: 'https://maps.app.goo.gl/zor9nZeypx11YCcH9'
             },
-            rosario: { 
-                name: 'Energe Rosario', 
+            rosario: {
+                name: 'Energe Rosario',
                 address: 'Barón de Maua 1082, S2000 Rosario, Santa Fe',
                 phone: '0341 152 110087',
-                link: 'https://maps.app.goo.gl/wGdbR77tjUi4WRLQ8' 
+                link: 'https://maps.app.goo.gl/wGdbR77tjUi4WRLQ8'
             }
         };
-        
+
         const loc = maps[zona];
         this.think(() => {
             this.addMessage(`¡Excelente! Aquí tenés los datos de **${loc.name}**:`, 'bot');
@@ -221,10 +225,10 @@ const EnergeBot = {
         this.step = 0;
         this.think(() => {
             this.addMessage("¡Genial! Nos encantaría conocer tu proyecto. Decime: ¿cuál es el tipo de solución que buscás?", 'bot', [
-                { label: 'Empresa / Industria', action: () => { this.userData.solucionTipo = 'Empresa/Industria'; this.qualifyComercial(true); }},
-                { label: 'Comercio / Negocio', action: () => { this.userData.solucionTipo = 'Comercio/Negocio'; this.qualifyComercial(true); }},
-                { label: 'Vivienda de gran consumo (>10kW)', action: () => { this.userData.solucionTipo = 'Gran Consumo'; this.qualifyComercial(true); }},
-                { label: 'Casa de consumo menor (<10kW)', action: () => { this.userData.solucionTipo = 'Residencial <10kW'; this.qualifyComercial(false); }}
+                { label: 'Empresa / Industria', action: () => { this.userData.solucionTipo = 'Empresa/Industria'; this.qualifyComercial(true); } },
+                { label: 'Comercio / Negocio', action: () => { this.userData.solucionTipo = 'Comercio/Negocio'; this.qualifyComercial(true); } },
+                { label: 'Vivienda de gran consumo (>10kW)', action: () => { this.userData.solucionTipo = 'Gran Consumo'; this.qualifyComercial(true); } },
+                { label: 'Casa de consumo menor (<10kW)', action: () => { this.userData.solucionTipo = 'Residencial <10kW'; this.qualifyComercial(false); } }
             ]);
         });
     },
@@ -232,10 +236,10 @@ const EnergeBot = {
     qualifyComercial(isQualified) {
         this.think(() => {
             if (isQualified) {
-                let enriquecido = (this.userData.solucionTipo.includes('Empresa')) 
+                let enriquecido = (this.userData.solucionTipo.includes('Empresa'))
                     ? "Excelente idea. Implementar energía solar para el sector productivo es una decisión estratégica brillante."
                     : "¡Muy buena elección! Los sistemas fotovoltaicos de gran escala son los que más rápido recuperan la inversión.";
-                
+
                 this.addMessage(enriquecido, 'bot');
                 setTimeout(() => {
                     this.addMessage("Para empezar, ¿con quién tengo el placer de hablar?", 'bot');
@@ -257,10 +261,10 @@ const EnergeBot = {
         this.showInput(false);
         this.think(() => {
             this.addMessage("¿Sobre qué tema necesitás soporte administrativo?", 'bot', [
-                { label: 'Facturación', action: () => { this.userData.adminTipo = 'Facturación'; this.startAdminFlow(); }},
-                { label: 'Pagos', action: () => { this.userData.adminTipo = 'Pagos'; this.startAdminFlow(); }},
-                { label: 'Seguimientos', action: () => { this.userData.adminTipo = 'Seguimientos'; this.startAdminFlow(); }},
-                { label: 'Datos de la empresa', action: () => { this.userData.adminTipo = 'Datos de Empresa'; this.startAdminFlow(); }}
+                { label: 'Facturación', action: () => { this.userData.adminTipo = 'Facturación'; this.startAdminFlow(); } },
+                { label: 'Pagos', action: () => { this.userData.adminTipo = 'Pagos'; this.startAdminFlow(); } },
+                { label: 'Seguimientos', action: () => { this.userData.adminTipo = 'Seguimientos'; this.startAdminFlow(); } },
+                { label: 'Datos de la empresa', action: () => { this.userData.adminTipo = 'Datos de Empresa'; this.startAdminFlow(); } }
             ]);
         });
     },
@@ -295,7 +299,7 @@ const EnergeBot = {
     processInput(text) {
         this.think(() => {
             if (this.currentFlow === 'comercial') {
-                switch(this.step) {
+                switch (this.step) {
                     case 1: this.userData.nombre = text; this.addMessage(`¡Un gusto, ${text.split(' ')[0]}! ¿Cuál es tu correo electrónico?`, 'bot'); this.step = 1.1; break;
                     case 1.1: if (!text.includes('@')) { this.addMessage("Por favor, ingresá un email válido.", 'bot'); return; } this.userData.email = text; this.addMessage("¿Cuál es el nombre de tu empresa o negocio? (O 'No')", 'bot'); this.step = 1.5; break;
                     case 1.5: this.userData.empresa = text.toLowerCase() === 'no' ? '' : text; this.addMessage("¿A qué número de teléfono podemos llamarte?", 'bot'); this.step = 2; break;
@@ -305,9 +309,9 @@ const EnergeBot = {
                     case 5: this.userData.plazo = text; this.addMessage("Por último, ¿cuál es tu consumo promedio mensual (en $ o kWh)?", 'bot'); this.step = 6; break;
                     case 6: this.userData.consumo = text; this.showInput(false); this.finalizeLead(); break;
                 }
-            } 
+            }
             else if (this.currentFlow === 'admin') {
-                switch(this.step) {
+                switch (this.step) {
                     case 10: this.userData.empresa = text; if (this.userData.adminTipo === 'Facturación') { this.addMessage("¿Nro de factura?", 'bot'); this.step = 11; } else { this.addMessage("Detalle de tu consulta:", 'bot'); this.step = 13; } break;
                     case 11: this.userData.facturaNro = text; this.addMessage("¿Fecha de la factura?", 'bot'); this.step = 12; break;
                     case 12: this.userData.facturaFecha = text; this.addMessage("Detalle de la consulta:", 'bot'); this.step = 13; break;
@@ -315,19 +319,19 @@ const EnergeBot = {
                 }
             }
             else if (this.currentFlow === 'postventa') {
-                switch(this.step) {
+                switch (this.step) {
                     case 20: this.userData.nombre = text; this.addMessage("Gracias. ¿Cuál es el **Email del titular**? (Mismo que figura en la factura).", 'bot'); this.step = 21; break;
                     case 21: if (!text.includes('@')) { this.addMessage("Por favor, ingresá un email válido.", 'bot'); return; } this.userData.email = text; this.addMessage("¿A qué número de teléfono podemos contactarte?", 'bot'); this.step = 22; break;
                     case 22: this.userData.telefono = text; this.addMessage("¿En qué **dirección** se encuentra el equipo? (Calle, Localidad, CP y Provincia).", 'bot'); this.step = 23; break;
-                    case 23: 
-                        this.userData.direccion = text; 
+                    case 23:
+                        this.userData.direccion = text;
                         this.showInput(false);
                         this.addMessage("¿En qué tipo de equipo se presenta la incidencia?", 'bot', [
-                            { label: 'Fotovoltaico On grid', action: () => { this.userData.equipoTipo = 'Fotovoltaico On grid'; this.step = 24; this.addMessage("Detalle del problema:", 'bot'); this.showInput(true); }},
-                            { label: 'Fotovoltaico Off grid / Híbridos', action: () => { this.userData.equipoTipo = 'Fotovoltaico Off grid / Híbridos'; this.step = 24; this.addMessage("Detalle del problema:", 'bot'); this.showInput(true); }},
-                            { label: 'Termotanques y equipos combinados', action: () => { this.userData.equipoTipo = 'Termotanques y equipos combinados'; this.step = 24; this.addMessage("Detalle del problema:", 'bot'); this.showInput(true); }},
-                            { label: 'Climatización de piscinas', action: () => { this.userData.equipoTipo = 'Climatización de piscinas'; this.step = 24; this.addMessage("Detalle del problema:", 'bot'); this.showInput(true); }},
-                            { label: 'Otros', action: () => { this.userData.equipoTipo = 'Otros'; this.step = 24; this.addMessage("Detalle del problema:", 'bot'); this.showInput(true); }}
+                            { label: 'Fotovoltaico On grid', action: () => { this.userData.equipoTipo = 'Fotovoltaico On grid'; this.step = 24; this.addMessage("Detalle del problema:", 'bot'); this.showInput(true); } },
+                            { label: 'Fotovoltaico Off grid / Híbridos', action: () => { this.userData.equipoTipo = 'Fotovoltaico Off grid / Híbridos'; this.step = 24; this.addMessage("Detalle del problema:", 'bot'); this.showInput(true); } },
+                            { label: 'Termotanques y equipos combinados', action: () => { this.userData.equipoTipo = 'Termotanques y equipos combinados'; this.step = 24; this.addMessage("Detalle del problema:", 'bot'); this.showInput(true); } },
+                            { label: 'Climatización de piscinas', action: () => { this.userData.equipoTipo = 'Climatización de piscinas'; this.step = 24; this.addMessage("Detalle del problema:", 'bot'); this.showInput(true); } },
+                            { label: 'Otros', action: () => { this.userData.equipoTipo = 'Otros'; this.step = 24; this.addMessage("Detalle del problema:", 'bot'); this.showInput(true); } }
                         ]);
                         break;
                     case 24: this.userData.detalleProblema = text; this.showInput(false); this.finalizePostventa(); break;
@@ -389,7 +393,7 @@ const EnergeBot = {
 // CSS for typing indicator
 const style = document.createElement('style');
 style.textContent = `
-    .dot { display: inline-block; width: 6px; height: 6px; background: #888; border-radius: 50%; margin: 0 2px; animation: bounce 1.4s infinite ease-in-out both; }
+    .dot { display: inline-block; width: 6px; height: 6px; background: #888; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both; }
     .dot:nth-child(1) { animation-delay: -0.32s; }
     .dot:nth-child(2) { animation-delay: -0.16s; }
     @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
