@@ -18,3 +18,12 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [R=301,L]
+
+
+# Blog Migration Redirects
+RedirectMatch 301 ^/blog-(.*)\.html$ /blog/$1.html
+RedirectMatch 301 ^/en/blog-(.*)\.html$ /en/blog/$1.html
+
+# Deleted Blog Redirections
+Redirect 301 /blog/mendovoz-2020-climatizadores-solares.html /blog.html
+Redirect 301 /en/blog/mendovoz-2020-solar-heaters.html /en/blog.html

@@ -78,104 +78,98 @@
         .html<!-- ===== ARTÍCULOS DEL BLOG (ES) ===== -->
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-rimi-2026-energia-solar-pymes.html</loc>
+                  .html<loc>https://energe.com.ar/blog/rimi-2026-energia-solar-pymes.html</loc>
                   .html<lastmod>2026-05-14.html</lastmod>
                   .html<changefreq>monthly.html</changefreq>
                   .html<priority>0.8.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-aumento-tarifas-industriales-energia-solar.html</loc>
+                  .html<loc>https://energe.com.ar/blog/aumento-tarifas-industriales-energia-solar.html</loc>
                   .html<lastmod>2026-05-14.html</lastmod>
                   .html<changefreq>monthly.html</changefreq>
                   .html<priority>0.8.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-vaca-muerta-energia-offgrid.html</loc>
+                  .html<loc>https://energe.com.ar/blog/vaca-muerta-energia-offgrid.html</loc>
                   .html<lastmod>2026-05-14.html</lastmod>
                   .html<changefreq>monthly.html</changefreq>
                   .html<priority>0.75.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-ley-generacion-distribuida.html</loc>
-                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog-ley-generacion-distribuida.html"/>
-                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog-distributed-generation-law.html"/>
+                  .html<loc>https://energe.com.ar/blog/ley-generacion-distribuida.html</loc>
+                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog/ley-generacion-distribuida.html"/>
+                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog/distributed-generation-law.html"/>
                   .html<lastmod>2026-01-15.html</lastmod>
                   .html<changefreq>monthly.html</changefreq>
                   .html<priority>0.75.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-roi-solar-industrial.html</loc>
-                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog-roi-solar-industrial.html"/>
-                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog-solar-roi.html"/>
+                  .html<loc>https://energe.com.ar/blog/roi-solar-industrial.html</loc>
+                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog/roi-solar-industrial.html"/>
+                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog/solar-roi.html"/>
                   .html<lastmod>2026-01-22.html</lastmod>
                   .html<changefreq>monthly.html</changefreq>
                   .html<priority>0.75.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-mendoza-solar.html</loc>
-                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog-mendoza-solar.html"/>
-                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog-mendoza-solar.html"/>
+                  .html<loc>https://energe.com.ar/blog/mendoza-solar.html</loc>
+                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog/mendoza-solar.html"/>
+                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog/mendoza-solar.html"/>
                   .html<lastmod>2026-02-05.html</lastmod>
                   .html<changefreq>monthly.html</changefreq>
                   .html<priority>0.7.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-casarosada-2019-macri-visito-energe.html</loc>
+                  .html<loc>https://energe.com.ar/blog/casarosada-2019-macri-visito-energe.html</loc>
                   .html<lastmod>2026-04-29.html</lastmod>
                   .html<changefreq>yearly.html</changefreq>
                   .html<priority>0.5.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-ecocuyo-2023-expansion-rosario.html</loc>
+                  .html<loc>https://energe.com.ar/blog/ecocuyo-2023-expansion-rosario.html</loc>
                   .html<lastmod>2026-04-29.html</lastmod>
                   .html<changefreq>yearly.html</changefreq>
                   .html<priority>0.55.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-ecocuyo-2023-great-place-to-work.html</loc>
+                  .html<loc>https://energe.com.ar/blog/ecocuyo-2023-great-place-to-work.html</loc>
                   .html<lastmod>2026-04-29.html</lastmod>
                   .html<changefreq>yearly.html</changefreq>
                   .html<priority>0.5.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-ecocuyo-2024-energe-17-anos.html</loc>
+                  .html<loc>https://energe.com.ar/blog/ecocuyo-2024-energe-17-anos.html</loc>
                   .html<lastmod>2026-04-29.html</lastmod>
                   .html<changefreq>yearly.html</changefreq>
                   .html<priority>0.55.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-mendovoz-2019-energe-macri.html</loc>
+                  .html<loc>https://energe.com.ar/blog/mendovoz-2019-energe-macri.html</loc>
                   .html<lastmod>2026-04-29.html</lastmod>
                   .html<changefreq>yearly.html</changefreq>
                   .html<priority>0.45.html</priority>
         .html</url>
 
-        .html<url>
-                  .html<loc>https://energe.com.ar/blog-mendovoz-2020-climatizadores-solares.html</loc>
-                  .html<lastmod>2026-04-29.html</lastmod>
-                  .html<changefreq>yearly.html</changefreq>
-                  .html<priority>0.55.html</priority>
-        .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-mendovoz-2020-parque-solar-santa-rosa.html</loc>
+                  .html<loc>https://energe.com.ar/blog/mendovoz-2020-parque-solar-santa-rosa.html</loc>
                   .html<lastmod>2026-04-29.html</lastmod>
                   .html<changefreq>yearly.html</changefreq>
                   .html<priority>0.6.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/blog-pv-magazine-2020-parque-solar-mendoza.html</loc>
+                  .html<loc>https://energe.com.ar/blog/pv-magazine-2020-parque-solar-mendoza.html</loc>
                   .html<lastmod>2026-04-29.html</lastmod>
                   .html<changefreq>yearly.html</changefreq>
                   .html<priority>0.55.html</priority>
@@ -256,27 +250,27 @@
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/en/blog-distributed-generation-law.html</loc>
-                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog-distributed-generation-law.html"/>
-                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog-ley-generacion-distribuida.html"/>
+                  .html<loc>https://energe.com.ar/en/blog/distributed-generation-law.html</loc>
+                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog/distributed-generation-law.html"/>
+                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog/ley-generacion-distribuida.html"/>
                   .html<lastmod>2026-01-15.html</lastmod>
                   .html<changefreq>monthly.html</changefreq>
                   .html<priority>0.6.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/en/blog-solar-roi.html</loc>
-                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog-solar-roi.html"/>
-                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog-roi-solar-industrial.html"/>
+                  .html<loc>https://energe.com.ar/en/blog/solar-roi.html</loc>
+                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog/solar-roi.html"/>
+                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog/roi-solar-industrial.html"/>
                   .html<lastmod>2026-01-22.html</lastmod>
                   .html<changefreq>monthly.html</changefreq>
                   .html<priority>0.6.html</priority>
         .html</url>
 
         .html<url>
-                  .html<loc>https://energe.com.ar/en/blog-mendoza-solar.html</loc>
-                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog-mendoza-solar.html"/>
-                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog-mendoza-solar.html"/>
+                  .html<loc>https://energe.com.ar/en/blog/mendoza-solar.html</loc>
+                  .html<xhtml:link rel="alternate" hreflang="en" href="https://energe.com.ar/en/blog/mendoza-solar.html"/>
+                  .html<xhtml:link rel="alternate" hreflang="es" href="https://energe.com.ar/blog/mendoza-solar.html"/>
                   .html<lastmod>2026-02-05.html</lastmod>
                   .html<changefreq>monthly.html</changefreq>
                   .html<priority>0.6.html</priority>
