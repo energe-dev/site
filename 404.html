@@ -1,93 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>404 - Página no encontrada | Energe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
-    <link href="/style.css" rel="stylesheet" />
-    <style>
-        .error-page {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: #0d0a06;
-            color: #fff;
-            padding: 20px;
-        }
-        .error-container {
-            max-width: 600px;
-        }
-        .error-code {
-            font-size: clamp(100px, 15vw, 180px);
-            font-weight: 900;
-            line-height: 1;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #D4721A 0%, #D4721A 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -5px;
-        }
-        .error-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .error-msg {
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-        .error-btns {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn-p {
-            background: #D4721A;
-            color: #fff;
-            padding: 14px 28px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
-            transition: all 0.2s;
-        }
-        .btn-p:hover {
-            background: #D4721A;
-            transform: translateY(-2px);
-        }
-        .btn-o {
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-            padding: 14px 28px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
-            transition: all 0.2s;
-        }
-        .btn-o:hover {
-            background: rgba(255,255,255,0.05);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>404 - Página no encontrada | Energe</title>
+  <meta name="robots" content="noindex, follow" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="images/favicon.png" rel="icon" type="image/png" />
+  <link href="style.css?v=1.01" rel="stylesheet" />
+  <style>
+    .error-hero {
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .error-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('images/hero-drone.jpg') center/cover;
+      opacity: 0.15;
+    }
+    .error-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 20px;
+    }
+    .error-code {
+      font-size: clamp(80px, 12vw, 150px);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #D4721A 0%, #ff9533 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -4px;
+    }
+    .error-title {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .error-msg {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 40px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .error-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
 </head>
 <body>
-    <div class="error-page">
-        <div class="error-container">
-            <div class="error-code">404</div>
-            <h1 class="error-title">Parece que te perdiste en el espacio solar</h1>
-            <p class="error-msg">La página que estás buscando no existe o ha sido movida. Pero no te preocupes, el sol siempre sale por algún lado.</p>
-            <div class="error-btns">
-                <a href="/" class="btn-p">Volver al inicio</a>
-                <a href="/cotizador-solar.html" class="btn-o">Cotizar mi proyecto</a>
-            </div>
-        </div>
+  <div class="mockup-bar">Especialistas en soluciones Fotovoltaicas Industriales en Argentina</div>
+  <nav>
+    <div class="nav-logo"><a href="./"><img alt="Energe" src="images/logos/logo-energe.png" width="150" height="40" /></a></div>
+    <button aria-label="Abrir menú" class="nav-hamburger" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-dropdown">
+        <a href="#soluciones">SOLUCIONES <span class="dd-arrow">▾</span></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="soluciones-ongrid.html">SOLAR ON-GRID</a></li>
+          <li><a href="soluciones-offgrid-backup.html">OFF-GRID / BACKUP INDUSTRIAL</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#obras">OBRAS REALIZADAS</a></li>
+      <li><a href="blog.html">BLOG</a></li>
+      <li><a href="preguntas-frecuentes.html">FAQ</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+      <li><a class="nav-cta" href="cotizador-solar.html">COTIZÁ TU PROYECTO</a></li>
+      <li class="nav-lang-li"><a class="lang-btn active" href="#">ES</a><span class="lang-sep">|</span><a class="lang-btn" href="en/">EN</a></li>
+    </ul>
+  </nav>
+
+  <div class="error-hero">
+    <div class="error-content">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Parece que te perdiste en el espacio solar</h1>
+      <p class="error-msg">La página que estás buscando no existe o ha sido movida. Pero no te preocupes, el sol siempre sale por algún lado y podemos ayudarte a encontrar tu camino.</p>
+      <div class="error-btns">
+        <a href="index.html" class="btn-p">Volver al inicio</a>
+        <a href="cotizador-solar.html" class="btn-o">Cotizar mi proyecto</a>
+      </div>
     </div>
+  </div>
+
+  <footer>
+    <div class="ft-main">
+      <div class="ft-col ft-brand">
+        <div class="ft-logo"><img alt="Energe" src="images/logos/logo-energe-footer.png" width="120" height="32" /></div>
+        <p class="ft-desc"><strong>Somos</strong> una empresa dedicada al desarrollo de soluciones de energía solar térmica y fotovoltaica. Desde 2007, impulsamos el ahorro energético y el cuidado del ambiente.</p>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-title">Contacto</div>
+        <ul class="ft-contact-list">
+          <li><span>261 242 4493</span></li>
+          <li><span>contacto@energe.com.ar</span></li>
+          <li><span>Alsina 2550, Maipú, Mendoza</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Energe. Todos los derechos reservados.</span>
+      <span><a href="privacidad.html">Política de privacidad</a></span>
+      <span><a href="legales.html">Legales</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

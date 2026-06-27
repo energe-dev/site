@@ -573,13 +573,13 @@ body>nav {
 }
 
 .value-section .feat {
-  background: rgba(255, 255, 255, .04);
-  border-color: rgba(255, 255, 255, .07)
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, .05)
 }
 
 .value-section .feat:hover {
   border-color: var(--orange);
-  background: rgba(212, 114, 26, .12);
+  background: #fff8f2;
   transform: translateX(4px)
 }
 
@@ -589,25 +589,25 @@ body>nav {
 }
 
 .value-section .feat-title {
-  color: #fff
+  color: #1a2530
 }
 
 .value-section .feat-desc {
-  color: rgba(255, 255, 255, .65)
+  color: #5a6675
 }
 
 .value-section .metric {
-  background: rgba(255, 255, 255, .04);
-  border-color: rgba(255, 255, 255, .07)
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, .05)
 }
 
 .value-section .metric:hover {
-  background: rgba(212, 114, 26, .1);
-  border-color: rgba(212, 114, 26, .25)
+  background: #fff8f2;
+  border-color: var(--orange)
 }
 
 .value-section .metric-lbl {
-  color: rgba(255, 255, 255, .6)
+  color: #5a6675
 }
 
 .section-tag {
@@ -1033,27 +1033,27 @@ body>nav {
 }
 
 .sectors-section .sc {
-  background: rgba(255, 255, 255, .04);
-  border-color: rgba(255, 255, 255, .06)
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, .05)
 }
 
 .sectors-section .sc:hover {
-  background: rgba(255, 255, 255, .07);
+  background: #fff8f2;
   border-color: var(--orange);
-  box-shadow: 0 8px 36px rgba(0, 0, 0, .4);
+  box-shadow: 0 8px 36px rgba(0, 0, 0, .15);
   transform: translateY(-4px)
 }
 
 .sectors-section .sc-name {
-  color: #fff
+  color: #1a2530
 }
 
 .sectors-section .sc-desc {
-  color: rgba(255, 255, 255, .65)
+  color: #5a6675
 }
 
 .sectors-section .sc-n {
-  color: rgba(212, 114, 26, .04)
+  color: rgba(212, 114, 26, .12)
 }
 
 .sectors-grid {
@@ -1187,7 +1187,7 @@ body>nav {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
+  color: #fff;
   margin-bottom: 14px
 }
 
@@ -1207,7 +1207,7 @@ body>nav {
   align-items: center;
   gap: 8px;
   font-size: 10.5px;
-  color: rgba(255, 255, 255, 0.4);
+  color: #fff;
   font-weight: 500
 }
 
@@ -1244,7 +1244,7 @@ body>nav {
 .cta-sub {
   font-size: 14px;
   line-height: 1.85;
-  color: rgba(255, 255, 255, .5);
+  color: #fff;
   margin-bottom: 42px;
   max-width: 480px
 }
@@ -1545,9 +1545,7 @@ footer::before {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 80px;
-  align-items: start;
-  max-width: 1200px;
-  margin: 0 auto
+  align-items: start
 }
 
 .cotizador-heading {
@@ -5745,12 +5743,16 @@ footer::before {
   .offgrid-slider,
   .bess-comp-grid,
   .cotizador-wrap,
+  .cotizador-section,
+  .cot-hero,
+  .legal-hero,
+  .legal-wrap,
   .post-success-wrap,
   .proj-header,
   .value-inner,
   .sectors-inner,
   .backup-banner-inner,
-  .ft-main,
+  footer,
   .cta-inner,
   .blog-preview-wrap,
   .contact-wrap,
@@ -5770,6 +5772,11 @@ footer::before {
     padding-left: calc(50vw - 720px) !important;
     padding-right: calc(50vw - 720px) !important;
     max-width: 100% !important;
+  }
+
+  .faq-page-wrap { 
+    padding-left: 0 !important; 
+    padding-right: 0 !important; 
   }
   
   .hero-content {
