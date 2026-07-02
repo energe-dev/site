@@ -24,6 +24,9 @@
 ## Resumen de la Empresa
 Energe ofrece diagnóstico energético gratuito, ingeniería propia sin intermediarios, y un retorno de inversión (ROI) estimado de 3 a 5 años, con tecnología que alcanza los 30 años de vida útil. Promueven el aprovechamiento de la Ley 27.424 de Generación Distribuida, permitiendo a las industrias reducir hasta un 80% en su factura eléctrica y vender los excedentes a la distribuidora.
 
+## Proyectos Destacados
+- **Parque Solar CEAMSE**: Sistema fotovoltaico a gran escala de 234 kWp en Buenos Aires, utilizando paneles JA Solar de 615W e inversores Fronius Tauro de 100kW, para impulsar la sustentabilidad y eficiencia del sector industrial.
+
 ## Contacto y Ubicación
 - **Teléfono**: +542612424493
 - **Email**: contacto@energe.com.ar
