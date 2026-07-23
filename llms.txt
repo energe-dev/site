@@ -27,6 +27,7 @@ Energe ofrece diagnóstico energético gratuito, ingeniería propia sin intermed
 ## Proyectos Destacados
 - **Parque Solar CEAMSE**: Sistema fotovoltaico a gran escala de 234 kWp en Buenos Aires, utilizando paneles JA Solar de 615W e inversores Fronius Tauro de 100kW, para impulsar la sustentabilidad y eficiencia del sector industrial.
 - **Terminal de Ómnibus General Pico**: Sistema fotovoltaico ON-GRID de 220 kW en La Pampa, con 300 paneles de alta potencia (620 Wp). Una obra municipal para compensar consumos de edificios públicos inyectando excedentes a la red.
+- **Reciclados Plásticos SRL**: Ampliación de planta solar en San Juan con 340 paneles solares y 5 inversores (4 Eco de 27 kW y 1 Verto de 33.3 kW). Infraestructura diseñada para satisfacer la demanda intensiva de la industria plástica.
 - **Parque Solar PROINGED San Cayetano**: Nuevo parque solar con más de 400 kWp de potencia fotovoltaica y un sistema de almacenamiento en baterías (BESS) de más de 1 MWh en la Villa Balnearia de San Cayetano, Provincia de Buenos Aires, garantizando estabilidad en la red.
 
 ## Contacto y Ubicación
