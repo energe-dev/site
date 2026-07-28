@@ -3692,7 +3692,7 @@ footer::before {
 .article-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, .82) 0%, rgba(0, 0, 0, .98) 100%)
+  background: linear-gradient(180deg, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, .80) 100%)
 }
 
 .article-hero-content {
